@@ -5,7 +5,6 @@
 Adafruit_MPU6050 mpu;
 
 float axOffset = 0, ayOffset = 0, azOffset = 0;
-float gxOffset = 0, gyOffset = 0, gzOffset = 0;
 
 void setup() {
   Serial.begin(115200);
@@ -29,9 +28,6 @@ void setup() {
     axOffset += a.acceleration.x;
     ayOffset += a.acceleration.y;
     azOffset += a.acceleration.z;
-    gxOffset += g.gyro.x;
-    gyOffset += g.gyro.y;
-    gzOffset += g.gyro.z;
 
     delay(5);
   }
@@ -39,9 +35,6 @@ void setup() {
   axOffset /= up_to;
   ayOffset /= up_to;
   azOffset /= up_to;
-  gxOffset /= up_to;
-  gyOffset /= up_to;
-  gzOffset /= up_to;
 }
 
 void loop() {
