@@ -15,7 +15,7 @@ https://docs.google.com/document/d/1Ugchummm-yzFRAeQpJfb2bQv5UT_bcpwTwR8XtCUR0M/
 1. https://github.com/besmabakirci1/LedBlinkingCsharpArduino/tree/main
 2. 
 -------
-(Berru Ekrul, Once Said)
+(Berru Erkul, Once Said)
 ---
 ###
 -------
