@@ -21,7 +21,7 @@ https://docs.google.com/document/d/1Ugchummm-yzFRAeQpJfb2bQv5UT_bcpwTwR8XtCUR0M/
 -------
 (Ceren Sultan Çetin, Once Said)
 ---
-###
-https://github.com/CerenSultanCETIN/RocketInterface2.git
-1)serial com port iletişimi tamamlanmadı. Map yapıldı. Gps modülünden veriler girilecek ancak kurulan kütüphanenşn sürümü uygun indiirlmediği için bende çalışmıyor.
+### https://github.com/CerenSultanCETIN/RocketInterface2.git
+1)serial com port iletişimi tamamlanmadı.benim pcde com1 com2 yok o yüzden sadece com3 ve com4 çalışıyor. sizde çalışır diye değiştirmedim duruyor
+2)Gps modülünden veriler girilecek ancak kurulan kütüphanenşn sürümü uygun indiirlmediği için bende çalışmıyor.
 -------
