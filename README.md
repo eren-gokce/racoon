@@ -12,8 +12,8 @@ Besma Bakırcı, Once Said)
 1. https://github.com/besmabakirci1/LedBlinkingCsharpArduino/tree/main
 2. https://github.com/besmabakirci1/Real-Time-Data-Visualization-with-BMP280-and-cSharp/tree/master
 --
-2025_01_07 /
-   🕙09:00-15:28
+
+2025_01_07 / 🕙09:00-15:28
    groundStation.cs 26th line there is "private GMapControl gmapcontrol = new ; " line getting unhendeled exception error aldığımız hatayı bir türlü çözemedik versiyon hatasından kaynaklı bir exception error alıyoruz gpt sorduk araştırdık diğer insanların yaptığı repoları inceledim lakin işe yarar bir çıktı alamadık.
 
 bulduğumuz işe yarayabilir repolar : https://github.dev/noant/Lazurite/blob/f8575b9de67a86cb28040c8db34052900a726641/Lazurite/LazuriteUI.Windows.Main/Statistics/Views/GeolocationViewImplementation/LocationsView.xaml.cs#L27#L68
