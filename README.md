@@ -13,7 +13,9 @@ Besma Bakırcı, Once Said)
 2. https://github.com/besmabakirci1/Real-Time-Data-Visualization-with-BMP280-and-cSharp/tree/master
 --
 
-2025_01_07 / 🕙09:00-15:28
+2025_01_07 /
+
+🕙09:00-15:28
 
 groundStation.cs 26th line there is "private GMapControl gmapcontrol = new ; " line getting unhendeled exception error aldığımız hatayı bir türlü çözemedik versiyon hatasından kaynaklı bir exception error alıyoruz gpt sorduk araştırdık diğer insanların yaptığı repoları inceledim lakin işe yarar bir çıktı alamadık.
 
@@ -23,16 +25,20 @@ https://github.dev/disdain13/PokeRoadie/blob/d40914458baf29796c5d31ba5e2cfe703d5
 
 Alınan Hata : Could not load type 'GMap.NET.Singleton`1' from assembly 'GMap.NET.Core, Version=2.1.6.0, Culture=neutral, PublicKeyToken=b85b9027b614afef'
 
-   Gps satın almıştım onu denemeye çalıştık ama açık havada olması gerektiğinden olumlu bir çıktı alamadık, çalışıp çalışmadığını bilmiyoruz.
+Gps satın almıştım onu denemeye çalıştık ama açık havada olması gerektiğinden olumlu bir çıktı alamadık, çalışıp çalışmadığını bilmiyoruz.
    
-   🕞 15:30-18:28  Yanıp sönmeye başladı ama hiç bir şey yazdırmıyo
+🕞 15:30-18:28  
+
+Yanıp sönmeye başladı ama hiç bir şey yazdırmıyo
 Sinyal kontolü için bunu denedim Rx tx değiştirip 10 11 yaptım.
 rx tx 10 (eskiden 3 yaptim calismadi port okuyor ama yok ) 
 tx rx 11 (eskiden 4 yaptim calismadi port okuyor ama yok)
 gnd dnd
 vcc 5v 
-   dışarda çok beklememe rağmen çalışmadı, bir yerlerim dondu :/ sağlık olsun ne yapalım efenim..
-   Gps Module Vakası: https://github.com/besmabakirci1/gpsModuleVakasi/tree/main 
+
+dışarda çok beklememe rağmen çalışmadı, bir yerlerim dondu :/ sağlık olsun ne yapalım efenim.. yarın terasta deneyeceğiz cerenle :) umarım olur.
+   
+Gps Module Vakası: https://github.com/besmabakirci1/gpsModuleVakasi/tree/main 
    
 -------
 (Ceren Sultan Çetin, Once Said)
