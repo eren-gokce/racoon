@@ -46,7 +46,7 @@ Gps Module Vakası: https://github.com/besmabakirci1/gpsModuleVakasi/tree/main
 ### Arayüz:
 https://github.com/CerenSultanCETIN/RocketInterface2.git
 2025_01_06 / 🕓 22:00 -03:38 
-1. serial com port iletişimi sağlandı. sadece henüz veri göndermiyor
+1. serial com port iletişimi sağlandı. sadece veri göndermiyor
 2. Gps modülünden veriler girilecek ancak kurulan kütüphanenşn sürümü uygun indiirlmediği için bende çalışmıyor.
 
 YAPILACAKLAR
