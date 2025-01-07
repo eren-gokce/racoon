@@ -46,8 +46,15 @@ Gps Module Vakası: https://github.com/besmabakirci1/gpsModuleVakasi/tree/main
 ### Arayüz:
 https://github.com/CerenSultanCETIN/RocketInterface2.git
 2025_01_06 / 🕓 22:00 -03:38 
-1. serial com port iletişimi tamamlanmadı.benim pcde com1 com2 yok o yüzden sadece com3 ve com4 çalışıyor. sizde çalışır diye değiştirmedim duruyor
+1. serial com port iletişimi sağlandı. sadece henüz veri göndermiyor
 2. Gps modülünden veriler girilecek ancak kurulan kütüphanenşn sürümü uygun indiirlmediği için bende çalışmıyor.
+
+YAPILACAKLAR
+1) Gps modülüyle roketin başlangıç ve anlık konumunu arayüzde görüntülenecek. Enlem ve boylam bilgisi de altına yazılacak. Zoom özelliği eklenecek.
+2) Basınç, sıcaklık, yükseklik vs. veriler için bir tablo oluşturulacak. Her verinin karşısına anlık olarak ait olduğu veriler girilecek.
+3) Roketin fırlatılma grafiği anlık olarak çizilecek. (openrocketdeki simülasyon grafiği gibi)
+4) Paraşütlerin açılma bilgisi arayüzde görüntülenecek.
+5) Porta veri aktarımı sağlanacak.
 -------
 (Ömer Faruk Çift, Once Said)
 ---
