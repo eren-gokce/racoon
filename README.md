@@ -23,6 +23,7 @@ https://github.dev/disdain13/PokeRoadie/blob/d40914458baf29796c5d31ba5e2cfe703d5
 Alınan Hata : Could not load type 'GMap.NET.Singleton`1' from assembly 'GMap.NET.Core, Version=2.1.6.0, Culture=neutral, PublicKeyToken=b85b9027b614afef'
 
    Gps satın almıştım onu denemeye çalıştık ama açık havada olması gerektiğinden olumlu bir çıktı alamadık, çalışıp çalışmadığını bilmiyoruz.
+   
    🕞 15:30-18:28  Yanıp sönmeye başladı ama hiç bir şey yazdırmıyo
 Sinyal kontolü için bunu denedim Rx tx değiştirip 10 11 yaptım.
 rx tx 10 (eskiden 3 yaptim calismadi port okuyor ama yok ) 
