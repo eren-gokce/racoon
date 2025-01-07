@@ -10,12 +10,15 @@ https://docs.google.com/document/d/1Ugchummm-yzFRAeQpJfb2bQv5UT_bcpwTwR8XtCUR0M/
 ###
 -------
 (Besma Bakırcı, Once Said)
----
+---  (about one month ago)
 ### Yazılım ve Donanım Arasındaki Haberleşme Mantığını anlamak için yaptığım deneylerin döküman repoları :  
 1. https://github.com/besmabakirci1/LedBlinkingCsharpArduino/tree/main
 2. https://github.com/besmabakirci1/Real-Time-Data-Visualization-with-BMP280-and-cSharp/tree/master
-(about one month ago)
+
+
+
 --
+
 2025_01_07 / 🕙09:00-15:28 
 Aldığımız hatayı bir türlü çözemedik versiyon hatasından kaynaklı bir exception error alıyoruz gpt sorduk araştırdık diğer insanların yaptığı repoları inceledim lakin işe yarar bir çıktı alamadık. Gps satın almıştım onu denemeye çalıştık ama açık havada olması gerektiğinden olumlu bir çıktı alamadık, çalışıp çalışmadığını bilmiyoruz.  
 
