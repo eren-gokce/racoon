@@ -44,7 +44,8 @@ Gps Module Vakası: https://github.com/besmabakirci1/gpsModuleVakasi/tree/main
 (Ceren Sultan Çetin, Once Said)
 ---
 ### Arayüz:https://github.com/CerenSultanCETIN/RocketInterface13.git
-![image](https://github.com/user-attachments/assets/976f9d35-f9fe-4ac4-88d7-878248e98479)
+![image](https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6)
+
 
 
 
