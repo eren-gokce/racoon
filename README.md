@@ -42,8 +42,8 @@ dışarda çok beklememe rağmen çalışmadı, bir yerlerim dondu :/ sağlık o
 Gps Module Vakası: https://github.com/besmabakirci1/gpsModuleVakasi/tree/main 
 
 2025_01_25
-[https://www.youtube.com/watch?v=YBt03B1piyI](https://www.youtube.com/watch?v=yDfn9ZEc5MA)
-
+[NEO-6M GPS MODÜL ile konum, hız, irtifa, tarih bilgisi alma | ESP VE ARDUİNO | TİNYGPS++ LİBRARY](https://www.youtube.com/watch?v=yDfn9ZEc5MA)
+https://drive.google.com/drive/folders/1Ig9ccjL5o0V9VCOxEw0sJ4Tpg6B3VTsB
 
 -------
 (Ceren Sultan Çetin, Once Said)
