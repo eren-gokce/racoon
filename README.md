@@ -39,7 +39,10 @@ vcc 5v
 dışarda çok beklememe rağmen çalışmadı, bir yerlerim dondu :/ sağlık olsun ne yapalım efenim.. yarın terasta deneyeceğiz cerenle :) umarım olur.
    
 Gps Module Vakası: https://github.com/besmabakirci1/gpsModuleVakasi/tree/main 
-   
+
+2025_01_25
+https://www.youtube.com/watch?v=YBt03B1piyI
+
 -------
 (Ceren Sultan Çetin, Once Said)
 ---
