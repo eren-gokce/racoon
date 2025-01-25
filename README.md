@@ -58,6 +58,6 @@ Gps Module Vakası: https://github.com/besmabakirci1/gpsModuleVakasi/tree/main
 ---
 ###
 -------
-##(Berru Erkul, Once Said)
+(Berru Erkul, Once Said)
 ---
 ###
