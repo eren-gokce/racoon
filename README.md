@@ -42,7 +42,8 @@ dışarda çok beklememe rağmen çalışmadı, bir yerlerim dondu :/ sağlık o
 Gps Module Vakası: https://github.com/besmabakirci1/gpsModuleVakasi/tree/main 
 
 2025_01_25
-https://www.youtube.com/watch?v=YBt03B1piyI
+[https://www.youtube.com/watch?v=YBt03B1piyI](https://www.youtube.com/watch?v=yDfn9ZEc5MA)
+
 
 -------
 (Ceren Sultan Çetin, Once Said)
