@@ -42,8 +42,12 @@ dışarda çok beklememe rağmen çalışmadı, bir yerlerim dondu :/ sağlık o
 Gps Module Vakası: https://github.com/besmabakirci1/gpsModuleVakasi/tree/main 
 
 2025_01_25
+GPS için araştırma sürecine girdim ancak araştırırken birkez daha aldığım GPS modülunu denemeye karar verdim, başka bir kodla, Cerendeydi GPS getirdi bende test için eve getirdim. Pazartesi günü Yusuf ve Şenol hocalarla konuşmak için gideceğim inşallah o güne kadar detaylı bir GPS modül araştırma raporlamasını yapmış olur test etmiş olurum yeni kodu umarım lock olur. 
+
+Bulduğum bir video ve onun verdiği kodu deneyeceğim.
 [NEO-6M GPS MODÜL ile konum, hız, irtifa, tarih bilgisi alma | ESP VE ARDUİNO | TİNYGPS++ LİBRARY](https://www.youtube.com/watch?v=yDfn9ZEc5MA)
 https://drive.google.com/drive/folders/1Ig9ccjL5o0V9VCOxEw0sJ4Tpg6B3VTsB
+
 
 -------
 (Ceren Sultan Çetin, Once Said)
