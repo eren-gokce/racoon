@@ -1,10 +1,11 @@
 # Roket Aviyonik 🚀
 
-(Eren Gökçe, Once Said)
+(Ceren Sultan Çetin, Once Said)
 ---
-### Yaptıklarımı not aldığım link:  
-https://docs.google.com/document/d/1Ugchummm-yzFRAeQpJfb2bQv5UT_bcpwTwR8XtCUR0M/edit?usp=sharing
--------
+### Arayüz:https://github.com/CerenSultanCETIN/RocketInterface13.git
+![Arayüz](https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6)
+
+---
 Besma Bakırcı, Once Said)
 ---  
 ### Yazılım ve Donanım Arasındaki Haberleşme Mantığını anlamak için yaptığım deneylerin döküman repoları :  
@@ -90,18 +91,17 @@ https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modu
 
 Soru : Test istasyonunu hakemin bilgisayarına usb ile nasıl yansıtıcaz
 -------
-(Ceren Sultan Çetin, Once Said)
+(Eren Gökçe, Once Said)
 ---
-### Arayüz:https://github.com/CerenSultanCETIN/RocketInterface13.git
-![Arayüz](https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6)
-
-
-
+### Yaptıklarımı not aldığım link:  
+https://docs.google.com/document/d/1Ugchummm-yzFRAeQpJfb2bQv5UT_bcpwTwR8XtCUR0M/edit?usp=sharing
+-------
 
 (Ömer Faruk Çift, Once Said)
 ---
 ###
 -------
+
 (Berru Erkul, Once Said)
 ---
 ###
