@@ -83,7 +83,10 @@ Adafruit Ultimate GPS
 
 benim beğendiğim  u-blox NEO-M8N-0 
 Roket takımları genelde Adafruit Ultimate GPS Modülü veya elimizdeki GY-NEO6MV2 GPS Modülünü kullanmış 
-
+-------------------------------------
+başka gps modüllerine burdan bakabiliriz : 
+https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modules/
+------------------------
 
 Soru : Test istasyonunu hakemin bilgisayarına usb ile nasıl yansıtıcaz
 -------
