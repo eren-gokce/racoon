@@ -4,7 +4,8 @@
 ---
 [Arayüz](https://github.com/CerenSultanCETIN/RocketInterface13.git)
 ![Arayüz foto](https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6)
-![image](https://github.com/user-attachments/assets/5771b50a-b59a-4d28-8a01-157c8cbf8838)
+![image](https://github.com/user-attachments/assets/1620a621-6c37-40a5-b761-0770dc5b48d1)
+
 
 
 ---
