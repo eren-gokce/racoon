@@ -23,9 +23,24 @@
 ---
 (Besma Bakırcı, Once Said)
 ---  
-Güncel Sorular : 
-1. Test istasyonunu hakemin bilgisayarına nasıl yansıtıcaz? 
-2. 
+2025_01_29 / Şartname toplantısı sonrası bazı notlar ve sorular:
+
+- İrtifa 
+- Enlem
+- Boylam
+
+bilgisi olmak zorunda.
+
+- Jireskoptan gelen verinin birinimi dps mi ?
+- Ivmenin birimi g-force mudur ?
+  
+yoksa başka bir şey olup onu dönüştürmemiz mi gerekir ?
+
+- USB -TTL olan bağlantı nasıl yapacağız onunla ilgili bir araştırma yapılmalı ? 
+- yaptığımız form uygulamasını nasıl export edip onu desktop app yapmamız gerekiyor? 
+
+- HYI denilen sistemin com bağlantı ayarları ile ilgili birkaç madde var onu anlamadık.
+
 <summary> 2025_01_27 / GPS ilk kez çalıştı !.. </summary> 
 
 bu [kodu](https://github.com/eren-gokce/racoon/blob/main/gpsTest/gpsModuleVakasi.ino) denedik ve çalıştı. Veri aldık ancak şöyle bir durum var , [NMEA DECODER](https://swairlearn.bluecover.pt/nmea_analyser) da çevirmemiz ve o şekilde Latitude, Longitude, Time çıktılarını anlamamız gerekti.
