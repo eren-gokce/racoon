@@ -9,12 +9,15 @@
 (Ceren Sultan Çetin, Once Said)
 ---
 [Arayüz Reposu](https://github.com/CerenSultanCETIN/RocketInterface13.git)
-
-<a href="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6">
-  <img src="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6" alt="resim1" width="650" />
-</a>
-
-![WhatsApp Image 2025-01-29 at 12 25 22 AM](https://github.com/user-attachments/assets/8513138f-b967-46f9-8c5c-7c51063dc786)
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <a href="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6">
+    <img src="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6" alt="resim1" width="400" />
+  </a>
+  
+  <a href="https://github.com/user-attachments/assets/8513138f-b967-46f9-8c5c-7c51063dc786">
+    <img src="https://github.com/user-attachments/assets/8513138f-b967-46f9-8c5c-7c51063dc786" alt="resim2" width="465" />
+  </a>
+</div>
 
 
 ---
