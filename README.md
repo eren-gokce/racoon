@@ -561,8 +561,8 @@ Ublox ZED-F9P RTK GPS Modülü
 başka gps modüllerine burdan bakabiliriz : 
 https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modules/
 
-----
 </details>
+
 ---
 
 (Eren Gökçe, Once Said)
