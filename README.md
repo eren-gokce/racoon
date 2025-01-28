@@ -1,4 +1,10 @@
 # Roket Aviyonik 🚀
+---
+- [Teknofest şartnamesi](https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2025_Roket_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_PfkB5.pdf)
+
+- [Yer hakem istasyon şartanamesi](https://github.com/user-attachments/files/18579452/EK-7_Hakem_Yer_Istasyonu_y52A5.1.docx)
+
+---
 
 (Ceren Sultan Çetin, Once Said)
 ---
