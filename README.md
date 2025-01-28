@@ -15,7 +15,7 @@
   </a>
   
   <a href="https://github.com/user-attachments/assets/8513138f-b967-46f9-8c5c-7c51063dc786">
-    <img src="https://github.com/user-attachments/assets/8513138f-b967-46f9-8c5c-7c51063dc786" alt="resim2" width="465" />
+    <img src="https://github.com/user-attachments/assets/8513138f-b967-46f9-8c5c-7c51063dc786" alt="resim2" width="450" />
   </a>
 </div>
 
