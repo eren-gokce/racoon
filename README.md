@@ -14,9 +14,7 @@
   <img src="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6" alt="resim1" width="650" />
 </a>
 
-<a href="(https://github.com/user-attachments/assets/11a2e0de-6c16-46bf-8865-5e48b6196fe0)">
-  <img src="https://github.com/user-attachments/assets/11a2e0de-6c16-46bf-8865-5e48b6196fe0)" alt="resim1" width="650" />
-</a>
+![WhatsApp Image 2025-01-29 at 12 25 22 AM](https://github.com/user-attachments/assets/8513138f-b967-46f9-8c5c-7c51063dc786)
 
 
 ---
