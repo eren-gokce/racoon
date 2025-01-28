@@ -563,6 +563,7 @@ https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modu
 
 ----
 </details>
+---
 
 (Eren Gökçe, Once Said)
 --- 
