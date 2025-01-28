@@ -2,15 +2,19 @@
 
 (Ceren Sultan Çetin, Once Said)
 ---
-[Arayüz](https://github.com/CerenSultanCETIN/RocketInterface13.git)
-![Arayüz foto](https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6)
+[Arayüz Reposu](https://github.com/CerenSultanCETIN/RocketInterface13.git)
+
+<a href="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6">
+  <img src="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6" alt="resim1" width="650" />
+</a>
+
 
 ---
 (Besma Bakırcı, Once Said)
 ---  
 Güncel Sorular : 
-1. Test istasyonunu hakemin bilgisayarına usb ile nasıl yansıtıcaz? 
-
+1. Test istasyonunu hakemin bilgisayarına nasıl yansıtıcaz? 
+2. 
 <summary> 2025_01_27 / GPS ilk kez çalıştı !.. </summary> 
 
 bu [kodu](https://github.com/eren-gokce/racoon/blob/main/gpsTest/gpsModuleVakasi.ino) denedik ve çalıştı. Veri aldık ancak şöyle bir durum var , [NMEA DECODER](https://swairlearn.bluecover.pt/nmea_analyser) da çevirmemiz ve o şekilde Latitude, Longitude, Time çıktılarını anlamamız gerekti.
@@ -464,6 +468,9 @@ public partial class MainForm : Form
 
 </summary>
 </details>
+
+----
+
 <details>
    <summary>Yazılım ve Donanım Arasındaki Haberleşme Mantığını anlamak için yaptığım deneylerin döküman repoları :  </summary>
 (about one month ago)
