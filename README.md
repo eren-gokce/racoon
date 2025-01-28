@@ -14,6 +14,10 @@
   <img src="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6" alt="resim1" width="650" />
 </a>
 
+<a href="(https://github.com/user-attachments/assets/11a2e0de-6c16-46bf-8865-5e48b6196fe0)">
+  <img src="https://github.com/user-attachments/assets/11a2e0de-6c16-46bf-8865-5e48b6196fe0)" alt="resim1" width="650" />
+</a>
+
 
 ---
 (Besma Bakırcı, Once Said)
