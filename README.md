@@ -647,7 +647,7 @@ float applyKalmanFilter(float measurement, float &estimate) {
 </details>
 
 ## Sensör Kalibrasyonu
-<details> <summary> Kodu </summary>
+<details> <summary> Sensör Kalibrasyon Kodu </summary>
 
 ```cpp
 void sensorKalibrasyonu() {
@@ -681,8 +681,9 @@ void sensorKalibrasyonu() {
   
 </details>
 
+## MPU ve BMP Kontrol Fonksiyon
 
-<details><summary> MPU ve BMP Kontrol Fonksiyon </summary>
+<details><summary> MPU ve BMP Kontrol Fonksiyon Kodu </summary>
   
 Bu fonksiyonlar **MPU6050** ve **BMP280** sensörlerinin çalışıp çalışmadığını kontrol eder.
 
