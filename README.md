@@ -599,7 +599,191 @@ https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modu
 
 (Ömer Faruk Çift, Once Said)
 ---
-###
+### Roket Uçuş Algoritması Açıklaması
+
+## Giriş
+Bu doküman, bir roket uçuş algoritmasını içeren **Arduino** tabanlı bir sistem için yazılmış C++ kodunun detaylı açıklamasını sunar. Algoritma, **MPU6050** ve **BMP280** sensörlerini kullanarak ivme, dönme ve yükseklik verilerini işler. Kalman filtresi uygulanarak veriler işlenir ve uçuş sırasında çeşitli kontrol mekanizmaları çalıştırılır.
+
+## Kütüphaneler
+Kodda kullanılan temel kütüphaneler şunlardır:
+
+- `Adafruit_MPU6050.h`: **MPU6050** ivmeölçer ve jiroskop sensörü için Adafruit kütüphanesi.
+- `Adafruit_BMP280.h`: **BMP280** barometrik basınç sensörü için Adafruit kütüphanesi.
+- `Adafruit_Sensor.h`: Adafruit'in sensör arabirimi.
+- `Wire.h`: **I2C** haberleşme için kullanılan kütüphane.
+- `SPI.h`: **SPI** haberleşme kütüphanesi.
+
+## Değişkenler ve Kalman Filtresi
+
+```cpp
+float Q = 0.001; // Süreç gürültü kovaryansı
+float R = 0.03;  // Ölçüm gürültü kovaryansı
+float P = 1;     // Hata kovaryansı
+float K;         // Kalman kazancı
+float filteredX = 0, filteredY = 0, filteredZ = 0;
+float axOffset = 0, ayOffset = 0, azOffset = 0;
+float gxOffset = 0, gyOffset = 0, gzOffset = 0;
+float baseAltitude = 0;
+float h = bmp.readAltitude(1030.9);
+float a = sqrt(pow(axOffset, 2) + pow(ayOffset, 2) + pow(azOffset, 2));
+```
+
+- **Kalman Filtresi** kullanılarak sensör verileri gürültüden arındırılır.
+- `applyKalmanFilter` fonksiyonu, ölçülen veriyi süzerek daha doğru bir tahmin üretir.
+- **Kovaryans**, iki değişkenin birbirleriyle nasıl değiştiğini ölçen bir istatistiksel değerdir; pozitifse aynı yönde, negatifse ters yönde değiştiklerini gösterir.
+
+### Kalman Filtre Fonksiyonu
+```cpp
+float applyKalmanFilter(float measurement, float &estimate) {
+    P += Q;
+    K = P / (P + R);
+    estimate = estimate + K * (measurement - estimate);
+    P *= (1 - K);
+    return estimate;
+}
+```
+
+## Sensör Kalibrasyonu
+
+```cpp
+void sensorKalibrasyonu() {
+    Serial.println("Sensör kalibrasyonu başlatılıyor");
+    sensors_event_t a, g, temp;
+    int calibrationLoops = 1000;
+
+    for (int i = 0; i < calibrationLoops; i++) {
+        mpu.getEvent(&a, &g, &temp);
+        axOffset += a.acceleration.x;
+        ayOffset += a.acceleration.y;
+        azOffset += a.acceleration.z;
+        gxOffset += g.gyro.x;
+        gyOffset += g.gyro.y;
+        gzOffset += g.gyro.z;
+        delay(5);
+    }
+
+    axOffset /= calibrationLoops;
+    ayOffset /= calibrationLoops;
+    azOffset /= calibrationLoops;
+    gxOffset /= calibrationLoops;
+    gyOffset /= calibrationLoops;
+    gzOffset /= calibrationLoops;
+    baseAltitude = bmp.readAltitude(1030.9);
+    Serial.println("Kalibrasyon tamamlandı.");
+}
+```
+- Sensör verilerinin **ortalaması** alınarak **gürültü azaltılır**.
+- **MPU6050** ve **BMP280** için referans değerler belirlenir.
+
+## MPU ve BMP Kontrol Fonksiyonları
+
+Bu fonksiyonlar **MPU6050** ve **BMP280** sensörlerinin çalışıp çalışmadığını kontrol eder.
+
+```cpp
+void MPU() {
+    for (int i=0; i<3; i++) {
+        if (!mpu.begin()) {
+            Serial.println("Failed to find MPU6050 chip");
+            MPU(); // Çalışmazsa tekrar başlat
+        }
+    }
+    Serial.println("MPU çalışmaya hazır");
+}
+```
+
+```cpp
+void BMP() {
+    unsigned status = bmp.begin(0x76);
+    for (int i=0; i<3; i++) {
+        if (!status) {
+            Serial.println(F("BMP280 sensörü bulunamadı!"));
+            while (1) delay(10);
+        }
+    }
+}
+```
+
+## Uçuş Algoritması Fonksiyonları
+
+### Uçuş Kontrolü
+```cpp
+void ucusKontrol() {
+    for (int i=0; i<3; i++) {
+        if (h > baseAltitude && a > 9.8) {
+            delay(500);
+        } else {
+            delay(10000);
+            ucusKontrol();
+        }
+    }
+    Serial.println("Uçuş sağlandı");
+}
+```
+- Roketin belirli bir yükseklik ve ivme eşiğini geçtiğinde uçuş moduna geçtiğini belirler.
+
+### Apogee (Tepe Noktası)
+```cpp
+void apogee() {
+    for (int i=0; i<3; i++) {
+        if (pitch < 0 && dikey hız <= 0 && h1 < h2) {
+            delay(500);
+        } else {
+            delay(500);
+            apogee();
+        }
+    }
+    Serial.println("Apogee ulaşıldı");
+}
+```
+- Roketin **apogee'ye ulaştığını** kontrol eder.
+
+### Paraşüt Açılma Kontrolü
+```cpp
+void parasut2() {
+    for (int i=0; i<3; i++) {
+        if (400 < h && h < 600) {
+            delay(500);
+        } else {
+            delay(500);
+            parasut2();
+        }
+    }
+    Serial.println("İkinci paraşüt açılabilir");
+}
+```
+- **400m ile 600m** arasında ikinci paraşütün açılmasına izin verir.
+
+### Roket Yere İndiğinde Kontrol
+```cpp
+void alcalmaKontrol() {
+    for (int i=0; i<3; i++) {
+        if (h1 == h2 && dikey hız == 0 && a == 0) {
+            delay(500);
+        } else {
+            delay(500);
+            alcalmaKontrol();
+        }
+    }
+    Serial.println("Roket yerde, GPS verisi alın");
+}
+```
+
+## Ana `setup` ve `loop`
+
+### `setup` Fonksiyonu
+- Sensörleri başlatır.
+- Kalibrasyon işlemlerini gerçekleştirir.
+- `MPU`, `BMP`, `GPS` ve `lora` modüllerini kontrol eder.
+
+### `loop` Fonksiyonu
+- **MPU6050** ve **BMP280**'den verileri okur ve **Kalman filtresi** uygular.
+- Uçuşun her aşamasını denetleyerek **uçuş kontrolü**, **apogee**, **paraşüt açılma** ve **iniş kontrolü** fonksiyonlarını çalıştırır.
+- Roketin yere indiğinde GPS verisini kaydeder.
+
+---
+**EEPROM**, **GPS** ve **LoRa** modüllerinin entegrasyonu daha sonra eklenecek.
+
+
 -------
 
 (Berru Erkul, Once Said)
