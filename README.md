@@ -597,9 +597,9 @@ https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modu
 
 ---
 
-(Ömer Faruk Çift, Once Said)
+(Ömer Faruk Çift & Berru Erkul Once Said)
 ---
-### Roket Uçuş Algoritması Açıklaması
+# Roket Uçuş Algoritması Açıklaması
 
 ## Kütüphaneler
 Kodda kullanılan temel kütüphaneler şunlardır:
@@ -612,6 +612,8 @@ Kodda kullanılan temel kütüphaneler şunlardır:
 
 ## Değişkenler ve Kalman Filtresi
 
+<details> <summary> Değişkenler </summary>
+  
 ```cpp
 float Q = 0.001; // Süreç gürültü kovaryansı
 float R = 0.03;  // Ölçüm gürültü kovaryansı
@@ -628,9 +630,11 @@ float a = sqrt(pow(axOffset, 2) + pow(ayOffset, 2) + pow(azOffset, 2));
 - **Kalman Filtresi** kullanılarak sensör verileri gürültüden arındırılır.
 - `applyKalmanFilter` fonksiyonu, ölçülen veriyi süzerek daha doğru bir tahmin üretir.
 - **Kovaryans**, iki değişkenin birbirleriyle nasıl değiştiğini ölçen bir istatistiksel değerdir; pozitifse aynı yönde, negatifse ters yönde değiştiklerini gösterir.
+</details>
 
-### Kalman Filtre Fonksiyonu
-```cpp
+<details> <summary> Kalman Filtre Fonksiyonu </summary>
+
+  ```cpp
 float applyKalmanFilter(float measurement, float &estimate) {
     P += Q;
     K = P / (P + R);
@@ -640,7 +644,10 @@ float applyKalmanFilter(float measurement, float &estimate) {
 }
 ```
 
+
 ## Sensör Kalibrasyonu
+<details>  
+  <summary> Sensör Kalibrasyon Kodu </summary>
 
 ```cpp
 void sensorKalibrasyonu() {
@@ -671,9 +678,13 @@ void sensorKalibrasyonu() {
 ```
 - Sensör verilerinin **ortalaması** alınarak **gürültü azaltılır**.
 - **MPU6050** ve **BMP280** için referans değerler belirlenir.
+  
+</details>
 
 ## MPU ve BMP Kontrol Fonksiyonları
 
+<details> <summary> MPU ve BMP Kontrol Fonksiyonları </summary>
+  
 Bu fonksiyonlar **MPU6050** ve **BMP280** sensörlerinin çalışıp çalışmadığını kontrol eder.
 
 ```cpp
@@ -699,10 +710,12 @@ void BMP() {
     }
 }
 ```
+</details>
 
 ## Uçuş Algoritması Fonksiyonları
 
-### Uçuş Kontrolü
+<details> <summary> Uçuş Kontrolü </summary>
+
 ```cpp
 void ucusKontrol() {
     for (int i=0; i<3; i++) {
@@ -717,8 +730,12 @@ void ucusKontrol() {
 }
 ```
 - Roketin belirli bir yükseklik ve ivme eşiğini geçtiğinde uçuş moduna geçtiğini belirler.
+</details>
 
 ### Apogee (Tepe Noktası)
+
+<details> <summary> Apogee Kodu <summary> 
+  
 ```cpp
 void apogee() {
     for (int i=0; i<3; i++) {
@@ -733,8 +750,11 @@ void apogee() {
 }
 ```
 - Roketin **apogee'ye ulaştığını** kontrol eder.
+</details>
 
 ### Paraşüt Açılma Kontrolü
+<details> <summary> Paraşüt Açılma Kontrol Kodu <summary>
+  
 ```cpp
 void parasut2() {
     for (int i=0; i<3; i++) {
@@ -749,8 +769,11 @@ void parasut2() {
 }
 ```
 - **400m ile 600m** arasında ikinci paraşütün açılmasına izin verir.
+</details>
 
 ### Roket Yere İndiğinde Kontrol
+<details> <summary> Roket Yere İndiğinde Kontrol <summary> 
+  
 ```cpp
 void alcalmaKontrol() {
     for (int i=0; i<3; i++) {
@@ -764,9 +787,10 @@ void alcalmaKontrol() {
     Serial.println("Roket yerde, GPS verisi alın");
 }
 ```
+</details>
 
 ## Ana `setup` ve `loop`
-
+  
 ### `setup` Fonksiyonu
 - Sensörleri başlatır.
 - Kalibrasyon işlemlerini gerçekleştirir.
@@ -779,10 +803,3 @@ void alcalmaKontrol() {
 
 ---
 **EEPROM**, **GPS** ve **LoRa** modüllerinin entegrasyonu daha sonra eklenecek.
-
-
--------
-
-(Berru Erkul, Once Said)
----
-###
