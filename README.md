@@ -19,7 +19,7 @@
 
 # [ Besma Bakırcı, Once Said ] 
  
-### 🌚 2025_01_29 / Şartname toplantısı sonrası bazı notlar ve sorular:
+### 🌚 2025.01.29 / Şartname toplantısı sonrası bazı notlar ve sorular:
 
 - İrtifa 
 - Enlem
@@ -37,7 +37,7 @@ yoksa başka bir şey olup onu dönüştürmemiz mi gerekir ?
 
 - HYI denilen sistemin com bağlantı ayarları ile ilgili birkaç madde var onu anlamadık.
 
-### 💥 2025_01_27 / GPS ilk kez çalıştı !.. 
+### 💥 2025.01.27 / GPS ilk kez çalıştı !.. 
 
 bu [kodu](https://github.com/eren-gokce/racoon/blob/main/gpsTest/gpsModuleVakasi.ino) denedik ve çalıştı. Veri aldık ancak şöyle bir durum var , [NMEA DECODER](https://swairlearn.bluecover.pt/nmea_analyser) da çevirmemiz ve o şekilde Latitude, Longitude, Time çıktılarını anlamamız gerekti.
 
