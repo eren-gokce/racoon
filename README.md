@@ -628,7 +628,6 @@ float a = sqrt(pow(axOffset, 2) + pow(ayOffset, 2) + pow(azOffset, 2));
 ```
 
 - **Kalman Filtresi** kullanılarak sensör verileri gürültüden arındırılır.
-- `applyKalmanFilter` fonksiyonu, ölçülen veriyi süzerek daha doğru bir tahmin üretir.
 - **Kovaryans**, iki değişkenin birbirleriyle nasıl değiştiğini ölçen bir istatistiksel değerdir; pozitifse aynı yönde, negatifse ters yönde değiştiklerini gösterir.
 </details>
 
@@ -644,6 +643,9 @@ float applyKalmanFilter(float measurement, float &estimate) {
     return estimate;
 }
 ```
+
+- `applyKalmanFilter` fonksiyonu, ölçülen veriyi süzerek daha doğru bir tahmin üretir.
+
 </details>
 
 ## Sensör Kalibrasyonu
