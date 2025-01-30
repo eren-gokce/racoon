@@ -715,7 +715,7 @@ void BMP() {
 
 <details><summary > Uçuş Algoritması Fonksiyonları</summary>
            
-<details><summary>Uçuş Kontrolü </summary>
+## Uçuş Kontrolü 
 
 ```cpp
 void ucusKontrol() {
@@ -731,9 +731,9 @@ void ucusKontrol() {
 }
 ```
  Roketin belirli bir yükseklik ve ivme eşiğini geçtiğinde uçuş moduna geçtiğini belirler.
-</details>
 
-<details><summary>Apogee (Tepe Noktası)<summary> 
+
+## Apogee (Tepe Noktası)
   
 ```cpp
 void apogee() {
@@ -750,9 +750,7 @@ void apogee() {
 ```
  Roketin **apogee'ye ulaştığını** kontrol eder.
   
-</details>
-
-<details><summary>Paraşüt Açılma Kontrolü<summary>   
+## Paraşüt Açılma Kontrolü
 
   ```cpp
 void parasut2() {
@@ -770,9 +768,8 @@ void parasut2() {
 
  **400m ile 600m** arasında ikinci paraşütün açılmasına izin verir.
   
-</details>
 
-<details> <summary>Roket Yere İndiğinde Kontrol <summary> 
+## Roket Yere İndiğinde Kontrol  
   
 ```cpp
 void alcalmaKontrol() {
@@ -787,7 +784,7 @@ void alcalmaKontrol() {
     Serial.println("Roket yerde, GPS verisi alın");
 }
 ```
-</details>
+
 
 </details>
 
