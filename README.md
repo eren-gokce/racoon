@@ -631,6 +631,7 @@ float a = sqrt(pow(axOffset, 2) + pow(ayOffset, 2) + pow(azOffset, 2));
 - `applyKalmanFilter` fonksiyonu, ölçülen veriyi süzerek daha doğru bir tahmin üretir.
 - **Kovaryans**, iki değişkenin birbirleriyle nasıl değiştiğini ölçen bir istatistiksel değerdir; pozitifse aynı yönde, negatifse ters yönde değiştiklerini gösterir.
 </details>
+--
 
 <details> <summary> Kalman Filtre Fonksiyonu </summary>
 
@@ -643,11 +644,10 @@ float applyKalmanFilter(float measurement, float &estimate) {
     return estimate;
 }
 ```
-
+</details>
 
 ## Sensör Kalibrasyonu
-<details>  
-  <summary> Sensör Kalibrasyon Kodu </summary>
+<details> <summary> Kodu </summary>
 
 ```cpp
 void sensorKalibrasyonu() {
@@ -681,9 +681,9 @@ void sensorKalibrasyonu() {
   
 </details>
 
-## MPU ve BMP Kontrol Fonksiyonları
+## MPU ve BMP Kontrol Fonksiyon
 
-<details> <summary> MPU ve BMP Kontrol Fonksiyonları </summary>
+<details> <summary> Kodları </summary>
   
 Bu fonksiyonlar **MPU6050** ve **BMP280** sensörlerinin çalışıp çalışmadığını kontrol eder.
 
@@ -711,6 +711,7 @@ void BMP() {
 }
 ```
 </details>
+-- 
 
 ## Uçuş Algoritması Fonksiyonları
 
@@ -750,6 +751,7 @@ void apogee() {
 }
 ```
 - Roketin **apogee'ye ulaştığını** kontrol eder.
+  
 </details>
 
 ### Paraşüt Açılma Kontrolü
