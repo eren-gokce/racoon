@@ -575,9 +575,7 @@ Beitian BN-220 GPS Modülü
 
 4. [Tyro119 RC Drone FPV Yarışı için Beitian BN-220T GPS Modülü Çift Modülü](https://www.elecbee.com/tr-617-module-board/tr-17651-Beitian-BN-220T-GPS-Module-Dual-Module-for-Tyro119-RC-Drone-FPV-Racing) $14,32
 
-
 Ublox ZED-F9P RTK GPS Modülü
-
 
 -------------------------------------
 başka gps modüllerine burdan bakabiliriz : 
@@ -585,7 +583,6 @@ https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modu
 
 </details>
 
----
 
 # [ Ömer Faruk Çift & Berru Erkul, Once Said ] 
 
