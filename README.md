@@ -631,7 +631,7 @@ float a = sqrt(pow(axOffset, 2) + pow(ayOffset, 2) + pow(azOffset, 2));
 - `applyKalmanFilter` fonksiyonu, ölçülen veriyi süzerek daha doğru bir tahmin üretir.
 - **Kovaryans**, iki değişkenin birbirleriyle nasıl değiştiğini ölçen bir istatistiksel değerdir; pozitifse aynı yönde, negatifse ters yönde değiştiklerini gösterir.
 </details>
---
+
 
 <details> <summary> Kalman Filtre Fonksiyonu </summary>
 
@@ -711,9 +711,10 @@ void BMP() {
 ```
 </details>
 
----
 
-<details><summary > Uçuş Algoritması Fonksiyonları</summary>
+## Uçuş Algoritması Fonksiyonları
+
+<details><summary> Uçuş Kontrolü , Apogee , Paraşüt Açılma Kontrolü , Roket Yere İndiğinde Kontrol </summary>
            
 ## Uçuş Kontrolü 
 
