@@ -798,7 +798,6 @@ void alcalmaKontrol() {
 - Roketin yere indiğinde GPS verisini kaydeder.
 
 ## 🪡 EEPROM, **GPS** ve **LoRa** modüllerinin entegrasyonu daha sonra eklenecek.
----
 
 # [ Eren Gökçe, Once Said ] 
 
