@@ -592,7 +592,7 @@ https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modu
 
 # [ Ömer Faruk Çift & Berru Erkul, Once Said ] 
 
-## Roket Uçuş Algoritması Açıklaması
+## ⚡️ Roket Uçuş Algoritması Açıklaması
 
 ### Kütüphaneler
 Kodda kullanılan temel kütüphaneler şunlardır:
