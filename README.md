@@ -591,12 +591,6 @@ https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modu
 
 ---
 
-(Eren Gökçe, Once Said)
---- 
-### [Yaptıklarımı not aldığım link](https://docs.google.com/document/d/1Ugchummm-yzFRAeQpJfb2bQv5UT_bcpwTwR8XtCUR0M/edit?usp=sharing)
-
----
-
 (Ömer Faruk Çift & Berru Erkul Once Said)
 ---
 # Roket Uçuş Algoritması Açıklaması
@@ -806,3 +800,10 @@ void alcalmaKontrol() {
 
 ---
 **EEPROM**, **GPS** ve **LoRa** modüllerinin entegrasyonu daha sonra eklenecek.
+
+---
+(Eren Gökçe, Once Said)
+--- 
+### [Yaptıklarımı not aldığım link](https://docs.google.com/document/d/1Ugchummm-yzFRAeQpJfb2bQv5UT_bcpwTwR8XtCUR0M/edit?usp=sharing)
+
+---
