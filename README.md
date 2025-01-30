@@ -19,7 +19,7 @@
 
 # [ Besma Bakırcı, Once Said ] 
  
-### 🌚 2025.01.29 / Şartname toplantısı sonrası bazı notlar ve sorular:
+### 🌚 2025_01_29 / Şartname toplantısı sonrası bazı notlar ve sorular:
 
 - İrtifa 
 - Enlem
