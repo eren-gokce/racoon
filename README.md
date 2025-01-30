@@ -5,9 +5,8 @@
 - [Hakem yer istasyonu şartnamesi](https://github.com/user-attachments/files/18579452/EK-7_Hakem_Yer_Istasyonu_y52A5.1.docx)
 
 ---
+# [ Ceren Sultan Çetin, Once Said ] 
 
-(Ceren Sultan Çetin, Once Said)
----
 [Arayüz Reposu](https://github.com/CerenSultanCETIN/RocketInterface13.git)
 <div style="display: flex; justify-content: center; gap: 20px;">
   <a href="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6">
@@ -21,8 +20,8 @@
 
 
 ---
-(Besma Bakırcı, Once Said)
----  
+# [ Besma Bakırcı, Once Said ] 
+ 
 2025_01_29 / Şartname toplantısı sonrası bazı notlar ve sorular:
 
 - İrtifa 
@@ -591,11 +590,11 @@ https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modu
 
 ---
 
-(Ömer Faruk Çift & Berru Erkul Once Said)
----
-# Roket Uçuş Algoritması Açıklaması
+# [ Ömer Faruk Çift & Berru Erkul, Once Said ] 
 
-## Kütüphaneler
+## Roket Uçuş Algoritması Açıklaması
+
+### Kütüphaneler
 Kodda kullanılan temel kütüphaneler şunlardır:
 
 - `Adafruit_MPU6050.h`: **MPU6050** ivmeölçer ve jiroskop sensörü için Adafruit kütüphanesi.
@@ -713,7 +712,7 @@ void BMP() {
 
 <details><summary> Uçuş Kontrolü , Apogee , Paraşüt Açılma Kontrolü , Roket Yere İndiğinde Kontrol </summary>
            
-## Uçuş Kontrolü 
+### Uçuş Kontrolü 
 
 ```cpp
 void ucusKontrol() {
@@ -731,7 +730,7 @@ void ucusKontrol() {
  Roketin belirli bir yükseklik ve ivme eşiğini geçtiğinde uçuş moduna geçtiğini belirler.
 
 
-## Apogee (Tepe Noktası)
+### Apogee (Tepe Noktası)
   
 ```cpp
 void apogee() {
@@ -748,7 +747,7 @@ void apogee() {
 ```
  Roketin **apogee'ye ulaştığını** kontrol eder.
   
-## Paraşüt Açılma Kontrolü
+### Paraşüt Açılma Kontrolü
 
   ```cpp
 void parasut2() {
@@ -767,7 +766,7 @@ void parasut2() {
  **400m ile 600m** arasında ikinci paraşütün açılmasına izin verir.
   
 
-## Roket Yere İndiğinde Kontrol  
+### Roket Yere İndiğinde Kontrol  
   
 ```cpp
 void alcalmaKontrol() {
@@ -798,10 +797,11 @@ void alcalmaKontrol() {
 - Uçuşun her aşamasını denetleyerek **uçuş kontrolü**, **apogee**, **paraşüt açılma** ve **iniş kontrolü** fonksiyonlarını çalıştırır.
 - Roketin yere indiğinde GPS verisini kaydeder.
 
-#### 🪡 EEPROM, **GPS** ve **LoRa** modüllerinin entegrasyonu daha sonra eklenecek.
+## 🪡 EEPROM, **GPS** ve **LoRa** modüllerinin entegrasyonu daha sonra eklenecek.
 ---
+
 (Eren Gökçe, Once Said)
 --- 
-### [Yaptıklarımı not aldığım link](https://docs.google.com/document/d/1Ugchummm-yzFRAeQpJfb2bQv5UT_bcpwTwR8XtCUR0M/edit?usp=sharing)
+## [Yaptıklarımı not aldığım link](https://docs.google.com/document/d/1Ugchummm-yzFRAeQpJfb2bQv5UT_bcpwTwR8XtCUR0M/edit?usp=sharing)
 
 ---
