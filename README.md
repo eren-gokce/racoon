@@ -681,9 +681,8 @@ void sensorKalibrasyonu() {
   
 </details>
 
-## MPU ve BMP Kontrol Fonksiyon
 
-<details> <summary> Kodları </summary>
+<details><summary> MPU ve BMP Kontrol Fonksiyon </summary>
   
 Bu fonksiyonlar **MPU6050** ve **BMP280** sensörlerinin çalışıp çalışmadığını kontrol eder.
 
@@ -711,11 +710,12 @@ void BMP() {
 }
 ```
 </details>
--- 
 
-## Uçuş Algoritması Fonksiyonları
+---
 
-<details> <summary> Uçuş Kontrolü </summary>
+<details><summary > Uçuş Algoritması Fonksiyonları</summary>
+           
+<details><summary>Uçuş Kontrolü </summary>
 
 ```cpp
 void ucusKontrol() {
@@ -730,12 +730,10 @@ void ucusKontrol() {
     Serial.println("Uçuş sağlandı");
 }
 ```
-- Roketin belirli bir yükseklik ve ivme eşiğini geçtiğinde uçuş moduna geçtiğini belirler.
+ Roketin belirli bir yükseklik ve ivme eşiğini geçtiğinde uçuş moduna geçtiğini belirler.
 </details>
 
-### Apogee (Tepe Noktası)
-
-<details> <summary> Apogee Kodu <summary> 
+<details><summary>Apogee (Tepe Noktası)<summary> 
   
 ```cpp
 void apogee() {
@@ -750,14 +748,13 @@ void apogee() {
     Serial.println("Apogee ulaşıldı");
 }
 ```
-- Roketin **apogee'ye ulaştığını** kontrol eder.
+ Roketin **apogee'ye ulaştığını** kontrol eder.
   
 </details>
 
-### Paraşüt Açılma Kontrolü
-<details> <summary> Paraşüt Açılma Kontrol Kodu <summary>
-  
-```cpp
+<details><summary>Paraşüt Açılma Kontrolü<summary>   
+
+  ```cpp
 void parasut2() {
     for (int i=0; i<3; i++) {
         if (400 < h && h < 600) {
@@ -770,11 +767,12 @@ void parasut2() {
     Serial.println("İkinci paraşüt açılabilir");
 }
 ```
-- **400m ile 600m** arasında ikinci paraşütün açılmasına izin verir.
+
+ **400m ile 600m** arasında ikinci paraşütün açılmasına izin verir.
+  
 </details>
 
-### Roket Yere İndiğinde Kontrol
-<details> <summary> Roket Yere İndiğinde Kontrol <summary> 
+<details> <summary>Roket Yere İndiğinde Kontrol <summary> 
   
 ```cpp
 void alcalmaKontrol() {
@@ -789,6 +787,8 @@ void alcalmaKontrol() {
     Serial.println("Roket yerde, GPS verisi alın");
 }
 ```
+</details>
+
 </details>
 
 ## Ana `setup` ve `loop`
