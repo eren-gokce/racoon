@@ -601,9 +601,6 @@ https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modu
 ---
 ### Roket Uçuş Algoritması Açıklaması
 
-## Giriş
-Bu doküman, bir roket uçuş algoritmasını içeren **Arduino** tabanlı bir sistem için yazılmış C++ kodunun detaylı açıklamasını sunar. Algoritma, **MPU6050** ve **BMP280** sensörlerini kullanarak ivme, dönme ve yükseklik verilerini işler. Kalman filtresi uygulanarak veriler işlenir ve uçuş sırasında çeşitli kontrol mekanizmaları çalıştırılır.
-
 ## Kütüphaneler
 Kodda kullanılan temel kütüphaneler şunlardır:
 
