@@ -798,9 +798,7 @@ void alcalmaKontrol() {
 - Uçuşun her aşamasını denetleyerek **uçuş kontrolü**, **apogee**, **paraşüt açılma** ve **iniş kontrolü** fonksiyonlarını çalıştırır.
 - Roketin yere indiğinde GPS verisini kaydeder.
 
----
-**EEPROM**, **GPS** ve **LoRa** modüllerinin entegrasyonu daha sonra eklenecek.
-
+#### EEPROM, **GPS** ve **LoRa** modüllerinin entegrasyonu daha sonra eklenecek.
 ---
 (Eren Gökçe, Once Said)
 --- 
