@@ -1,10 +1,9 @@
 # Roket Aviyonik 🚀
----
+
 - [Teknofest şartnamesi](https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2025_Roket_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_PfkB5.pdf)
 
 - [Hakem yer istasyonu şartnamesi](https://github.com/user-attachments/files/18579452/EK-7_Hakem_Yer_Istasyonu_y52A5.1.docx)
-
----
+  
 # [ Ceren Sultan Çetin, Once Said ] 
 
 [Arayüz Reposu](https://github.com/CerenSultanCETIN/RocketInterface13.git)
@@ -18,11 +17,9 @@
   </a>
 </div>
 
-
----
 # [ Besma Bakırcı, Once Said ] 
  
-2025_01_29 / Şartname toplantısı sonrası bazı notlar ve sorular:
+🌚 2025_01_29 / Şartname toplantısı sonrası bazı notlar ve sorular:
 
 - İrtifa 
 - Enlem
@@ -40,7 +37,7 @@ yoksa başka bir şey olup onu dönüştürmemiz mi gerekir ?
 
 - HYI denilen sistemin com bağlantı ayarları ile ilgili birkaç madde var onu anlamadık.
 
-<summary> 2025_01_27 / GPS ilk kez çalıştı !.. </summary> 
+<summary> 💥 2025_01_27 / GPS ilk kez çalıştı !.. </summary> 
 
 bu [kodu](https://github.com/eren-gokce/racoon/blob/main/gpsTest/gpsModuleVakasi.ino) denedik ve çalıştı. Veri aldık ancak şöyle bir durum var , [NMEA DECODER](https://swairlearn.bluecover.pt/nmea_analyser) da çevirmemiz ve o şekilde Latitude, Longitude, Time çıktılarını anlamamız gerekti.
 
