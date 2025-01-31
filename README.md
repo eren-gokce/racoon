@@ -597,6 +597,7 @@ https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modu
 
 ## ⚡️ Roket Uçuş Algoritması Açıklaması
 ### FLOWCHART
+![roketcimms drawio](https://github.com/user-attachments/assets/66848fb9-5c2b-4711-82d9-dc0a1c9d0c85)
 
 
 
