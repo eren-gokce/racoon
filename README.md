@@ -713,21 +713,58 @@ void BMP() {
 
 ## Uçuş Algoritması Fonksiyonları
 
-<details><summary> Uçuş Kontrolü , Apogee , Paraşüt Açılma Kontrolü , Roket Yere İndiğinde Kontrol </summary>
-           
-### Uçuş Kontrolü 
+<details><summary> roketHareketEtmiyor, LiffOff , Apogee , Paraşüt Açılma Kontrolü , Roket Yere İndiğinde Kontrol </summary>
+
+### Roket Hareket Etmezse
+```cpp
+void roketHareketEtmiyor() {
+    if(h==){
+    axOffset = sensor.acceleration.x;//offsetleri sabitliyoruz değer alınmıyo
+    ayOffset = sensor.acceleration.y;
+    azOffset = sensor.acceleration.z;
+    gxOffset = sensor.gyro.x;
+    gyOffset = sensor.gyro.y;
+    gzOffset = sensor.gyro.z;
+}
+    else{ // uçmaya başlarsa kalibrasyondaki ofsetleri bir kere alıp devam ediyoruz sensor kalibrasyonundaki kod
+        mpu.getEvent(&a, &g, &temp);
+        axOffset += a.acceleration.x;
+        ayOffset += a.acceleration.y;
+        azOffset += a.acceleration.z;
+        gxOffset += g.gyro.x;
+        gyOffset += g.gyro.y;
+        gzOffset += g.gyro.z;
+        delay(500);
+
+    axOffset /= calibrationLoops;
+    ayOffset /= calibrationLoops;
+    azOffset /= calibrationLoops;
+    gxOffset /= calibrationLoops;
+    gyOffset /= calibrationLoops;
+    gzOffset /= calibrationLoops;
+
+    referansYukseklik = bmp.readAltitude(1030.9); // Referans yükseklik alınması
+    }
+```
+ Eğer roket kalibrasyonu tamamladıktan sonra uçuşa geçmezse uygulanacak tarife   
+ 
+### Liff Off 
 
 ```cpp
-void ucusKontrol() {
-    for (int i=0; i<3; i++) {
-        if (h > baseAltitude && a > 9.8) {
-            delay(500);
-        } else {
-            delay(10000);
-            ucusKontrol();
-        }
-    }
-    Serial.println("Uçuş sağlandı");
+void LiffOff(){// Başlangıç noktası
+
+for (int i=0; i<3; i++){
+  if (h>referansYukseklik && a> kalibrasyondan alınan ivme){// ivmeyi bilemedik 
+    delay(100);
+  }
+  else {
+    roketHareketEtmiyor();
+    delay(10000);
+    LiffOff();
+  }
+}
+  Serial.println("ucus saglandi");
+}
 }
 ```
  Roketin belirli bir yükseklik ve ivme eşiğini geçtiğinde uçuş moduna geçtiğini belirler.
