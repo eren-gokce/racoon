@@ -18,8 +18,13 @@
 </div>
 
 # [ Besma Bakırcı, Once Said ] 
- 
-### 🌚 2025_01_29 / Şartname toplantısı sonrası bazı notlar ve sorular:
+
+### 🤔🧐 2025_01_31 / ÖTR Rapor incelemesi ve geçmiş raporları inceleme notlarım: 
+
+- Geçen sene finalist olan takım gps için [bunu](https://www.mouser.com.tr/ProductDetail/u-blox/MAX-8Q-0?qs=DPoM0jnrROXs29tEjk5Xmw%3D%3D) kullanmışlar güç tüketimi bakımından daha az olduğu ve daha hızlı güncelleme hızı için bunu kullandıklarını düşünüyordum Mete başkan " Fazla profesyonel bir ürün , Bunu kullanmamız zor olur. Önce elimizdekiyle işi bitirelim sonra geçmeyi deneriz" dedi.
+- 
+
+### 🌚🤝 2025_01_29 / Şartname toplantısı sonrası bazı notlar ve sorular:
 
 - İrtifa 
 - Enlem
@@ -29,15 +34,19 @@ bilgisi olmak zorunda.
 
 - Jireskoptan gelen verinin birinimi dps mi ?
 - Ivmenin birimi g-force mudur ?
-  
+
 yoksa başka bir şey olup onu dönüştürmemiz mi gerekir ?
+
+<a href="(https://github.com/user-attachments/assets/f52d8408-84fa-4977-bce8-330be7c3f8ec)">
+    <img src="https://github.com/user-attachments/assets/f52d8408-84fa-4977-bce8-330be7c3f8ec" alt="resim7" width="400" />
+  </a>
 
 - USB -TTL olan bağlantı nasıl yapacağız onunla ilgili bir araştırma yapılmalı ? 
 - yaptığımız form uygulamasını nasıl export edip onu desktop app yapmamız gerekiyor? 
 
 - HYI denilen sistemin com bağlantı ayarları ile ilgili birkaç madde var onu anlamadık.
 
-### 💥 2025.01.27 / GPS ilk kez çalıştı !.. 
+### 💥🤙 2025.01.27 / GPS ilk kez çalıştı !.. 
 
 bu [kodu](https://github.com/eren-gokce/racoon/blob/main/gpsTest/gpsModuleVakasi.ino) denedik ve çalıştı. Veri aldık ancak şöyle bir durum var , [NMEA DECODER](https://swairlearn.bluecover.pt/nmea_analyser) da çevirmemiz ve o şekilde Latitude, Longitude, Time çıktılarını anlamamız gerekti.
 
