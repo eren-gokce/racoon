@@ -13,7 +13,7 @@ float filteredY = 0;
 float filteredZ = 0;
 float axOffset = 0, ayOffset = 0, azOffset = 0;
 float gxOffset = 0, gyOffset = 0, gzOffset = 0;
-float baseAltitude = 0; // Kalibrasyon sirasinda elde edilen referans yukseklik
+float referansYukseklik = 0; // Kalibrasyon sirasinda elde edilen referans yukseklik
 float h = bmp.readAltitude(1030.9); // Basınca göre hesaplanan yükseklik
 float a = sqrt(pow(axOffset, 2) + pow(ayOffset, 2) + pow(azOffset, 2)); // 3 eksende ivme büyüklüğü
 
@@ -38,6 +38,7 @@ void sensorKalibrasyonu() {
         gxOffset += g.gyro.x;
         gyOffset += g.gyro.y;
         gzOffset += g.gyro.z;
+
         delay(5);
     }
 
@@ -48,7 +49,7 @@ void sensorKalibrasyonu() {
     gyOffset /= calibrationLoops;
     gzOffset /= calibrationLoops;
 
-    baseAltitude = bmp.readAltitude(1030.9); // Referans yükseklik alınması
+    referansYukseklik = bmp.readAltitude(1030.9); // Referans yükseklik alınması
     Serial.println("Kalibrasyon tamamlandı.");
 }
 
@@ -115,9 +116,9 @@ void roketHareketEtmiyor() {
         ayOffset += a.acceleration.y;
         azOffset += a.acceleration.z;
         gxOffset += g.gyro.x;
-        gyOffset += g.gyro.y;S
+        gyOffset += g.gyro.y;
         gzOffset += g.gyro.z;
-        delay(5);
+        delay(500);
 
     axOffset /= calibrationLoops;
     ayOffset /= calibrationLoops;
@@ -126,14 +127,14 @@ void roketHareketEtmiyor() {
     gyOffset /= calibrationLoops;
     gzOffset /= calibrationLoops;
 
-    baseAltitude = bmp.readAltitude(1030.9); // Referans yükseklik alınması
+    referansYukseklik = bmp.readAltitude(1030.9); // Referans yükseklik alınması
     }
 
 
 void LiffOff(){// Başlangıç noktası
 
 for (int i=0; i<3; i++){
-  if (h>kalibrasyondan alınan yükseklik && a> kalibrasyondan alınan ivme){
+  if (h>referansYukseklik && a> kalibrasyondan alınan ivme){// ivmeyi bilemedik 
     delay(100);
   }
   else {
@@ -142,7 +143,7 @@ for (int i=0; i<3; i++){
     LiffOff();
   }
 }
-  Serial.println(" ucus saglandi");
+  Serial.println("ucus saglandi");
 }
 }
 
