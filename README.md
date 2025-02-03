@@ -11,13 +11,9 @@
   <a href="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6">
     <img src="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6" alt="resim1" width="400" />
   </a>
+ ![arayüzüçlü](https://github.com/user-attachments/assets/2ccbbab8-a2f0-47a4-aba1-ba456c424566)
+ 
   
-  <a href="![image](https://github.com/user-attachments/assets/f99662e9-f843-49cb-899c-d8ade107f729)
-">
-    <img src="![image](https://github.com/user-attachments/assets/27cf30d9-1745-45ad-a878-e33017006c4a)
-" width="400" />
-  </a>
-</div>
 
 
 
