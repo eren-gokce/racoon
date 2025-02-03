@@ -9,12 +9,13 @@
 [Arayüz Reposu](https://github.com/CerenSultanCETIN/RocketInterface13.git)
 <div style="display: flex; justify-content: center; gap: 20px;">
   <a href="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6">
-    <img src="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6" alt="resim1" width="400" />
+    <img src="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6" alt="resim1" width="750" />
   </a>
- ![arayüzüçlü](https://github.com/user-attachments/assets/2ccbbab8-a2f0-47a4-aba1-ba456c424566)
- 
-  
-
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <a href="https://github.com/user-attachments/assets/2ccbbab8-a2f0-47a4-aba1-ba456c424566)">
+    <img src="https://github.com/user-attachments/assets/2ccbbab8-a2f0-47a4-aba1-ba456c424566" alt="resim1" width="750" />
+  </a>
+   
 
 
 # [ Besma Bakırcı, Once Said ] 
