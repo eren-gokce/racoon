@@ -12,11 +12,13 @@
     <img src="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6" alt="resim1" width="400" />
   </a>
   
-  <a href="https://github.com/user-attachments/assets/8513138f-b967-46f9-8c5c-7c51063dc786">
-    <img src="https://github.com/user-attachments/assets/8513138f-b967-46f9-8c5c-7c51063dc786" alt="resim2" width="400" />
+  <a href="![image](https://github.com/user-attachments/assets/f99662e9-f843-49cb-899c-d8ade107f729)
+">
+    <img src="![image](https://github.com/user-attachments/assets/27cf30d9-1745-45ad-a878-e33017006c4a)
+" width="400" />
   </a>
 </div>
-![image](https://github.com/user-attachments/assets/ac7472e5-e413-4e7e-8542-b2fb9ee762a3)
+
 
 
 # [ Besma Bakırcı, Once Said ] 
