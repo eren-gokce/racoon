@@ -16,6 +16,8 @@
     <img src="https://github.com/user-attachments/assets/8513138f-b967-46f9-8c5c-7c51063dc786" alt="resim2" width="400" />
   </a>
 </div>
+![image](https://github.com/user-attachments/assets/ac7472e5-e413-4e7e-8542-b2fb9ee762a3)
+
 
 # [ Besma Bakırcı, Once Said ] 
 
