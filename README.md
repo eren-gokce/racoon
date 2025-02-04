@@ -597,7 +597,8 @@ https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modu
 
 ## ⚡️ Roket Uçuş Algoritması Açıklaması
 ### FLOWCHART ÖTR İÇİN 
-![Uploading ötr için.drawio (1).png…]()
+![ötr için drawio (1)](https://github.com/user-attachments/assets/f24c6af1-ad4f-4e07-b224-e7d90b5a494d)
+
 
 
 
