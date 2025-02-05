@@ -796,7 +796,7 @@ void apogee() {
     Serial.println("Apogee ulaşıldı");
 }
 ```
- Roketin **apogee'ye ulaştığını** kontrol eder.
+ Roketin **apogee'ye ulaşıp ulaşmadığını** kontrol eder.
   
 ### Paraşüt Açılma Kontrolü
 
