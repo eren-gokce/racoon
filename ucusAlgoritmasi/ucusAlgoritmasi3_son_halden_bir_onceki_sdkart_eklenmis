@@ -1,0 +1,162 @@
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_BMP280.h>
+#include <Adafruit_Sensor.h>
+#include <Wire.h>
+#include <SPI.h>
+#include <SD.h> // ✅ SD kart için kütüphane eklendi
+
+Adafruit_MPU6050 mpu;
+Adafruit_BMP280 bmp;
+const int chipSelect = 10; // ✅ SD kart modülü CS pini
+
+float accZ;
+float referansIvme = 0;
+float referansYukseklik = 0; 
+float filteredX = 0, filteredY = 0, filteredZ = 0;
+float axOffset = 0, ayOffset = 0, azOffset = 0;
+float gxOffset = 0, gyOffset = 0, gzOffset = 0;
+
+// 📌 SD KARTA VERİ YAZMA FONKSİYONU
+void writeToSD(float accX, float accY, float accZ, float gyroX, float gyroY, float gyroZ, float altitude) {
+    File dataFile = SD.open("sensor_data.txt", FILE_WRITE);
+    
+    if (dataFile) {
+        dataFile.print(millis()); // Zaman damgası
+        dataFile.print(",");
+        dataFile.print(accX);
+        dataFile.print(",");
+        dataFile.print(accY);
+        dataFile.print(",");
+        dataFile.print(accZ);
+        dataFile.print(",");
+        dataFile.print(gyroX);
+        dataFile.print(",");
+        dataFile.print(gyroY);
+        dataFile.print(",");
+        dataFile.print(gyroZ);
+        dataFile.print(",");
+        dataFile.println(altitude);
+
+        dataFile.close();
+    } else {
+        Serial.println("SD kart yazma hatası!");
+    }
+}
+
+// 📌 SD KART SON KAYIT OKUMA
+void readLastSDData() {
+    File dataFile = SD.open("sensor_data.txt");
+
+    if (dataFile) {
+        String lastLine = "";
+        while (dataFile.available()) {
+            lastLine = dataFile.readStringUntil('\n');
+        }
+        dataFile.close();
+        Serial.print("Son kaydedilen veri: ");
+        Serial.println(lastLine);
+    } else {
+        Serial.println("SD kart okuma hatası!");
+    }
+}
+
+void setup(void) {
+    Serial.begin(115200);
+    Serial.println("basladi");
+
+    // ✅ SD Kart Başlatma
+    Serial.println("SD kart başlatılıyor...");
+    if (!SD.begin(chipSelect)) {
+        Serial.println("SD kart başlatılamadı!");
+    } else {
+        Serial.println("SD kart başarıyla başlatıldı!");
+    }
+
+    bmp.begin(0x76);
+    mpu.begin();
+    bmp.readAltitude();
+    
+    // MPU6050 ve BMP280 ayarları korunarak devam ettirildi
+    mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
+    mpu.setGyroRange(MPU6050_RANGE_500_DEG);
+    mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
+
+    sensors_event_t a, g, temp;
+    mpu.getEvent(&a, &g, &temp);
+
+    unsigned status;
+    status = bmp.begin(0x76);
+    if (!status) {
+        Serial.println(F("BMP280 Sensörü bulunamadı!"));
+        while (1) delay(10);
+    }
+
+    bmp.setSampling(Adafruit_BMP280::MODE_NORMAL,     
+                    Adafruit_BMP280::SAMPLING_X2,     
+                    Adafruit_BMP280::SAMPLING_X16,    
+                    Adafruit_BMP280::FILTER_X16,      
+                    Adafruit_BMP280::STANDBY_MS_500); 
+
+    Serial.println("");
+    delay(100);
+
+    // ✅ Sensör ve kalibrasyon işlemleri
+    MPU();
+    BMP();
+    GPS();
+    lora();
+    sensorKalibrasyonu();
+
+    Serial.println("sisteme kaydet");
+    Serial.println("uçuşa hazır");
+
+    readLastSDData(); // 📌 Son kaydedilen veriyi oku
+}
+
+void loop() {
+    sensors_event_t a, g, temp;
+    mpu.getEvent(&a, &g, &temp);
+
+    float h = bmp.readAltitude(1030.9);
+    float aMagnitude = sqrt(pow(axOffset, 2) + pow(ayOffset, 2) + pow(azOffset, 2));
+
+    float accX = applyKalmanFilter(a.acceleration.x - axOffset, filteredX);
+    float accY = applyKalmanFilter(a.acceleration.y - ayOffset, filteredY);
+    float accZ = applyKalmanFilter(a.acceleration.z - azOffset + 10.1, filteredZ);
+
+    /* Verileri seri porta yazdır */
+    Serial.print("Filtered Acceleration X: ");
+    Serial.print(accX);
+    Serial.print(", Y: ");
+    Serial.print(accY);
+    Serial.print(", Z: ");
+    Serial.print(accZ);
+    Serial.println(" m/s^2");
+
+    Serial.print("Rotation X: ");
+    Serial.print(g.gyro.x - gxOffset);
+    Serial.print(", Y: ");
+    Serial.print(g.gyro.y - gyOffset);
+    Serial.print(", Z: ");
+    Serial.print(g.gyro.z - gzOffset);
+    Serial.println(" rad/s");
+
+    Serial.print(F("Approx altitude = "));
+    Serial.print(h);
+    Serial.println(" m");
+
+    Serial.println();
+    delay(50);
+
+    // 📌 SD Karta Sensör Verilerini Kaydet
+    writeToSD(accX, accY, accZ, g.gyro.x - gxOffset, g.gyro.y - gyOffset, g.gyro.z - gzOffset, h);
+
+    // Uçuş Algoritmaları
+    LiffOff();
+    apogee();
+    parasut2();
+    alcalmaKontrol();
+
+    Serial.println("Tebrikler ekip, roketi bulmaya gidin!");
+    GPS();
+}
