@@ -1,0 +1,22 @@
+#include <SoftwareSerial.h>
+
+//Pins for software serial
+#define tx_pin 10
+#define rx_pin 11
+
+// Create an instance of the SoftwareSerial class
+SoftwareSerial gpsPort(rx_pin, tx_pin);
+
+void setup()
+{
+  Serial.begin(9600);  // Set 9600 as hardware serial baud rate
+  gpsPort.begin(9600); //Set 9600 as software serial baud rate
+}
+
+void loop()
+{
+  // Displays raw GPS data when available
+  while (gpsPort.available() > 0)
+    Serial.write(gpsPort.read());
+    delay(1000);
+}
