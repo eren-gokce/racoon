@@ -97,14 +97,12 @@ https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modu
 |  |  | **TinyGPS++ Kütüphanesi** ([GitHub](https://github.com/mikalhart/TinyGPSPlus)) | Arduino, ESP32, ESP8266 | Hayır, kütüphane mevcut. |
 
 ### **Kütüphaneler ve Kullanım Alanları:**
-
 | **Kütüphane** | **Platformlar** | **Avantajlar** | **Olası Sorunlar** |
 | --- | --- | --- | --- |
-| **TinyGPS++** | Arduino, ESP32, ESP8266 | Basit ve hızlı kullanım. | Bellek kısıtlaması olan projelerde yetersiz olabilir. |
-| **NeoGPS** | Arduino, AVR, ESP8266 | Düşük bellek kullanımı, hızlı veri işleme. | Yapılandırması daha karmaşık. |
-| **u-blox API** | Arduino, STM32, Raspberry Pi | Gelişmiş veri işleme, GNSS desteği. | Basit projelerde fazla karmaşık gelebilir. |
-
-
+| **TinyGPS++** | Arduino, ESP32, ESP8266 | Basit ve hızlı kullanım. Hızlı entegrasyon sağlar. | Bellek kısıtlaması olan projelerde yetersiz olabilir, örneğin düşük bellekli cihazlarda. |
+| **NeoGPS** | Arduino, AVR, ESP8266 | Düşük bellek kullanımı, hızlı veri işleme. Gerçek zamanlı verileri işlemek için optimize edilmiştir. | Yapılandırması daha karmaşık olabilir, başlangıç seviyesindeki kullanıcılar için zorlayıcı olabilir. |
+| **u-blox API** | Arduino, STM32, Raspberry Pi | Gelişmiş veri işleme, GNSS desteği, yüksek doğruluklu veriler sağlar. | Basit projelerde fazla karmaşık ve donanım gereksinimleri yüksek olabilir. Ayrıca, API'yi kullanmak için biraz daha fazla öğrenme süresi gerekebilir. |
+| **u-blox F9P RTK** | Arduino, STM32, Raspberry Pi | RTK (Real-Time Kinematic) desteği, çoklu GNSS Global Navigation Satellite System) sistemlerini destekler, yüksek doğruluk sağlar (santimetre seviyesinde). | Yüksek maliyet, karmaşık yapılandırma, yüksek donanım gereksinimi. |
 
 
 ### 🤔🧐 2025_01_31 / ÖTR Rapor incelemesi ve geçmiş raporları inceleme notlarım: 
