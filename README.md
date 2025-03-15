@@ -18,6 +18,94 @@
 
 
 # [ Besma Bakırcı, Once Said ] 
+### 💥 2025.03.15 / KTR Raporlarının hazırlanması 
+
+#### Questions:
+
+1. Kodlanış şekilleri, i2c mi SPI mı UART mı ?
+2. Hazır kütüphane var mı yoksa driver mı yazılacak ?
+
+<details> <summary> Alternatif Modül</summary> 
+2025_01_25/27
+
+GPS için araştırma sürecine girdim ancak araştırırken birkez daha aldığım GPS modülunu denemeye karar verdim, başka bir kodla EKTEDİR, Cerendeydi GPS getirdi bende test için eve getirdim. Pazartesi günü Yusuf ve Şenol hocalarla konuşmak için gideceğim Ömer de eşlik edecek inşallah o güne kadar detaylı bir GPS modül araştırma raporlamasını yapmış olur test etmiş olurum yeni kodu umarım lock olur. 
+
+- [NEO-6M GPS MODÜL ile konum, hız, irtifa, tarih bilgisi alma | ESP VE ARDUİNO | TİNYGPS++ LİBRARY](https://www.youtube.com/watch?v=yDfn9ZEc5MA)
+- [Videodaki verilen kod](https://drive.google.com/drive/folders/1Ig9ccjL5o0V9VCOxEw0sJ4Tpg6B3VTsB)
+- [TinyGPS++ Library](https://github.com/mikalhart/TinyGPSPlus?tab=readme-ov-file)
+
+--
+{Elimizdeki GY-NEO6MV2 GPS Modülü}
+Roket takımları genelde Adafruit Ultimate GPS Modülü veya elimizdeki GY-NEO6MV2 GPS Modülünü kullanmış 
+benim beğendiğim  u-blox NEO-M8N-0 
+---
+Alternatif Modüller :
+-----------------------------
+
+Adafruit Ultimate GPS 
+
+[ Adafruit Ultimate GPS Breakout - 66 channel w/10 Hz updates: Bu modül, yüksek hassasiyetli GPS verileri sağlar ve 10 Hz'e kadar güncelleme hızı sunar. Ayrıca, dahili veri kaydedici ve antene sahiptir.
+](https://www.adafruit.com/product/5440)
+----------------------------------------------------- --------
+[ Adafruit Ultimate GPS Breakout with GLONASS + GPS - PA1616D: Bu model, hem GPS hem de GLONASS uydu sistemlerini destekler, bu sayede daha hızlı ve hassas konum belirleme imkanı sunar.](https://www.adafruit.com/product/746?utm_source=chatgpt.com)
+
+Ublox GYGPSV1 NEO-8M GPS Modülü:
+1. [Ublox GY-GPSV3 NEO-8M M8N GPS Modülü](https://www.robocombo.com/ublox-gy-gpsv3-neo-8m-m8n-gps-modulu--3196) 472,56 ₺
+
+
+2. [u-blox NEO-M8N-0](https://www.mouser.com.tr/ProductDetail/u-blox/NEO-M8N-0?qs=zW32dvEIR3unZhZI0KRbew%3D%3D
+)[DataSheet](https://www.mouser.com.tr/datasheet/2/1025/NEO_M8_FW3_DataSheet_UBX_15031086-3180589.pdf)
+
+
+Beitian BN-220 GPS Modülü
+1. [AddictiveRC](https://shop.addictiverc.com/products/beitian-bn-220-gps-module-3-6v-5-5v-ttl-level-dual-gnss-module-built-in-led-flash-for-rc-fpv-drone) $20
+
+2. [AMAZON](https://www.amazon.com.tr/Rordigo-HMC5883-Glonass-Kurulum-Kullan%C4%B1m/dp/B0D37YDZNM) 845 ₺
+   
+3. [Beitian Dual BN-220 GPS GLONASS Anten Modülü TTL Seviye RC Drone Uçak](https://www.elecbee.com/tr-592-GPS-Module/tr-17610-Beitian-Dual-BN-220-GPS-GLONASS-Antenna-Module-TTL-Level-RC-Drone-Airplane 
+)$17,59
+
+4. [Tyro119 RC Drone FPV Yarışı için Beitian BN-220T GPS Modülü Çift Modülü](https://www.elecbee.com/tr-617-module-board/tr-17651-Beitian-BN-220T-GPS-Module-Dual-Module-for-Tyro119-RC-Drone-FPV-Racing) $14,32
+
+Ublox ZED-F9P RTK GPS Modülü
+
+-------------------------------------
+başka gps modüllerine burdan bakabiliriz : 
+https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modules/
+
+
+---
+</details>
+
+-----
+
+| **GPS Modülü** | **Kullanılan Protokoller** | **Hazır Kütüphane** | **Yazılım Platformu** | **Driver Gereksinimi** |
+| --- | --- | --- | --- | --- |
+| **Adafruit Ultimate GPS Breakout** | UART | **Adafruit GPS Kütüphanesi** ([GitHub](https://github.com/adafruit/Adafruit_GPS)) | Arduino, Python | Hayır, kütüphane mevcut. |
+|  |  | **TinyGPS++ Kütüphanesi** ([GitHub](https://github.com/mikalhart/TinyGPSPlus)) | Arduino, ESP32, ESP8266 | Hayır, kütüphane mevcut. |
+| **Adafruit Ultimate GPS + GLONASS (PA1616D)** | UART | **Adafruit GPS Kütüphanesi** ([GitHub](https://github.com/adafruit/Adafruit_GPS)) | Arduino, Python | Hayır, kütüphane mevcut. |
+|  |  | **TinyGPS++ Kütüphanesi** ([GitHub](https://github.com/mikalhart/TinyGPSPlus)) | Arduino, ESP32, ESP8266 | Hayır, kütüphane mevcut. |
+| **Ublox GY-GPSV3 NEO-8M** | UART | **u-blox C++/Python API** ([u-blox Docs](https://www.u-blox.com/en/docs/UBX-13003221)) | Arduino, STM32, Raspberry Pi, Python | Hayır, kütüphane mevcut. |
+|  |  | **TinyGPS++ Kütüphanesi** ([GitHub](https://github.com/mikalhart/TinyGPSPlus)) | Arduino, ESP32, ESP8266 | Hayır, kütüphane mevcut. |
+|  |  | **NeoGPS Kütüphanesi** ([GitHub](https://github.com/SlashDevin/NeoGPS)) | Arduino, AVR, ESP8266 | Hayır, kütüphane mevcut. |
+| **Ublox NEO-6M GPS Modülü** | UART | **TinyGPS++ Kütüphanesi** ([GitHub](https://github.com/mikalhart/TinyGPSPlus)) | Arduino, ESP32, ESP8266, STM32 | Hayır, kütüphane mevcut. |
+|  |  | **NeoGPS Kütüphanesi** ([GitHub](https://github.com/SlashDevin/NeoGPS)) | Arduino, AVR, ESP8266 | Hayır, kütüphane mevcut. |
+|  |  | **u-blox C++/Python API** ([u-blox Docs](https://www.u-blox.com/en/docs/UBX-13003221)) | Arduino, Raspberry Pi, STM32, Python | Hayır, kütüphane mevcut. |
+| **Beitian BN-220 GPS Modülü** | UART | **TinyGPS++ Kütüphanesi** ([GitHub](https://github.com/mikalhart/TinyGPSPlus)) | Arduino, ESP32, ESP8266 | Hayır, kütüphane mevcut. |
+|  |  | **NeoGPS Kütüphanesi** ([GitHub](https://github.com/SlashDevin/NeoGPS)) | Arduino, AVR, ESP8266 | Hayır, kütüphane mevcut. |
+| **Ublox ZED-F9P RTK GPS Modülü** | UART, I2C, SPI | **u-blox F9P RTK Kütüphanesi** ([u-blox Docs](https://www.u-blox.com/en/docs/UBX-21022705)) | Arduino, Raspberry Pi, STM32, Python | Hayır, kütüphane mevcut. |
+|  |  | **TinyGPS++ Kütüphanesi** ([GitHub](https://github.com/mikalhart/TinyGPSPlus)) | Arduino, ESP32, ESP8266 | Hayır, kütüphane mevcut. |
+
+### **Kütüphaneler ve Kullanım Alanları:**
+
+| **Kütüphane** | **Platformlar** | **Avantajlar** | **Olası Sorunlar** |
+| --- | --- | --- | --- |
+| **TinyGPS++** | Arduino, ESP32, ESP8266 | Basit ve hızlı kullanım. | Bellek kısıtlaması olan projelerde yetersiz olabilir. |
+| **NeoGPS** | Arduino, AVR, ESP8266 | Düşük bellek kullanımı, hızlı veri işleme. | Yapılandırması daha karmaşık. |
+| **u-blox API** | Arduino, STM32, Raspberry Pi | Gelişmiş veri işleme, GNSS desteği. | Basit projelerde fazla karmaşık gelebilir. |
+
+
+
 
 ### 🤔🧐 2025_01_31 / ÖTR Rapor incelemesi ve geçmiş raporları inceleme notlarım: 
 
@@ -542,55 +630,6 @@ dışarda çok beklememe rağmen çalışmadı, bir yerlerim dondu :/ sağlık o
 [Gps Module Vakası Repom](https://github.com/besmabakirci1/gpsModuleVakasi/tree/main)
 </details>
 
-<details> <summary> Alternatif Modül</summary> 
-2025_01_25/27
-
-GPS için araştırma sürecine girdim ancak araştırırken birkez daha aldığım GPS modülunu denemeye karar verdim, başka bir kodla EKTEDİR, Cerendeydi GPS getirdi bende test için eve getirdim. Pazartesi günü Yusuf ve Şenol hocalarla konuşmak için gideceğim Ömer de eşlik edecek inşallah o güne kadar detaylı bir GPS modül araştırma raporlamasını yapmış olur test etmiş olurum yeni kodu umarım lock olur. 
-
-- [NEO-6M GPS MODÜL ile konum, hız, irtifa, tarih bilgisi alma | ESP VE ARDUİNO | TİNYGPS++ LİBRARY](https://www.youtube.com/watch?v=yDfn9ZEc5MA)
-- [Videodaki verilen kod](https://drive.google.com/drive/folders/1Ig9ccjL5o0V9VCOxEw0sJ4Tpg6B3VTsB)
-- [TinyGPS++ Library](https://github.com/mikalhart/TinyGPSPlus?tab=readme-ov-file)
-
---
-{Elimizdeki GY-NEO6MV2 GPS Modülü}
-Roket takımları genelde Adafruit Ultimate GPS Modülü veya elimizdeki GY-NEO6MV2 GPS Modülünü kullanmış 
-benim beğendiğim  u-blox NEO-M8N-0 
-
-Alternatif Modüller :
------------------------------
-
-Adafruit Ultimate GPS 
-
-[ Adafruit Ultimate GPS Breakout - 66 channel w/10 Hz updates: Bu modül, yüksek hassasiyetli GPS verileri sağlar ve 10 Hz'e kadar güncelleme hızı sunar. Ayrıca, dahili veri kaydedici ve antene sahiptir.
-](https://www.adafruit.com/product/5440)
------------------------------------------------------ --------
-[ Adafruit Ultimate GPS Breakout with GLONASS + GPS - PA1616D: Bu model, hem GPS hem de GLONASS uydu sistemlerini destekler, bu sayede daha hızlı ve hassas konum belirleme imkanı sunar.](https://www.adafruit.com/product/746?utm_source=chatgpt.com)
-
-Ublox GYGPSV1 NEO-8M GPS Modülü:
-1. [Ublox GY-GPSV3 NEO-8M M8N GPS Modülü](https://www.robocombo.com/ublox-gy-gpsv3-neo-8m-m8n-gps-modulu--3196) 472,56 ₺
-
-
-2. [u-blox NEO-M8N-0](https://www.mouser.com.tr/ProductDetail/u-blox/NEO-M8N-0?qs=zW32dvEIR3unZhZI0KRbew%3D%3D
-)[DataSheet](https://www.mouser.com.tr/datasheet/2/1025/NEO_M8_FW3_DataSheet_UBX_15031086-3180589.pdf)
-
-
-Beitian BN-220 GPS Modülü
-1. [AddictiveRC](https://shop.addictiverc.com/products/beitian-bn-220-gps-module-3-6v-5-5v-ttl-level-dual-gnss-module-built-in-led-flash-for-rc-fpv-drone) $20
-
-2. [AMAZON](https://www.amazon.com.tr/Rordigo-HMC5883-Glonass-Kurulum-Kullan%C4%B1m/dp/B0D37YDZNM) 845 ₺
-   
-3. [Beitian Dual BN-220 GPS GLONASS Anten Modülü TTL Seviye RC Drone Uçak](https://www.elecbee.com/tr-592-GPS-Module/tr-17610-Beitian-Dual-BN-220-GPS-GLONASS-Antenna-Module-TTL-Level-RC-Drone-Airplane 
-)$17,59
-
-4. [Tyro119 RC Drone FPV Yarışı için Beitian BN-220T GPS Modülü Çift Modülü](https://www.elecbee.com/tr-617-module-board/tr-17651-Beitian-BN-220T-GPS-Module-Dual-Module-for-Tyro119-RC-Drone-FPV-Racing) $14,32
-
-Ublox ZED-F9P RTK GPS Modülü
-
--------------------------------------
-başka gps modüllerine burdan bakabiliriz : 
-https://www.mouser.com.tr/c/embedded-solutions/wireless-rf-modules/gnss-gps-modules/
-
-</details>
 
 
 # [ Ömer Faruk Çift & Berru Erkul, Once Said ] 
