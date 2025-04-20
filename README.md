@@ -18,6 +18,25 @@
 
 
 # [ Besma Bakırcı, Once Said ] 
+
+### 2025.04.20 / Algoritma Deney Testi / Asansör Kullanıldı hızın değişimi gözlemlendi. ( Erenle birlikte yaptık )
+##### KTR de yazılan kısım : 
+
+- Algoritma Testleri:
+Bu test ile takimlar özgün UKB'leri ile aym sensör mimarisine sahip bir prototip olusturmalidir. Prototip için devre kartinin üretilmis olmasi gerekmemektedir. Sensörler modül olarak breadboard üzerinde bir araya getirilebilir. Devre kartini üretmis olan takimlar nihai devre kartlari ile bu testi gerçeklestirebilirler.
+Testin amaci ayrilma sistemini aktiflestirecek olan algoritmanin çalisma prensibinin kontrolüdür. Takimlar gerekirse algoritmalari için belirledikleri esik degerleri degistirerek ancak algoritma mantigini degistirmeden algoritmalarin1 test etmelidirler. Yapilan test sonucunda ayrilma sisteminin aktiflestirildigi görsel veya isitsel bir çikti ile gösterilmelidir.
+Ornek bir test senaryosu olarak, ayrilma algoritmasinda roketin yer normali ile yaptigi açi ve irtifa degerini kullanan bir sistem için breadboard üzerine yerlestirilen bir prototip aviyonik sistemin yer ile yaptigi açi el ile degistirilebilir.
+Sonrasinda ise sistem bir emis sistemi (örnegin elektrik süpürgesi) yardimiyla vakumlama yapip irtifa degisimi saglanabilir. Yapilan degisiklikler sonucun kurtarma sisteminin aktivasyonunu modellemek için bir LED lambas1 yakilabilir ya da bir ses sistemi (örnegin buzzer) aktive edilebilir. Yapilan bu adimlar en fazla 30 saniyelik bir video ile gösterilmelidir.
+
+
+  https://github.com/user-attachments/assets/4e7f96be-68da-4bf2-be7a-c1ad1da02b06
+
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <a href="https://github.com/user-attachments/assets/b571d8d4-8fc2-40d7-b4c7-0fd44b211a0b">
+    <img src="https://github.com/user-attachments/assets/b571d8d4-8fc2-40d7-b4c7-0fd44b211a0b" alt="resim1" width="750" />
+  </a>
+
+
 ### 💥 2025.03.15 / KTR Raporlarının hazırlanması 
 
 #### Questions:
