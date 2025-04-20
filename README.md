@@ -31,11 +31,14 @@ Sonrasinda ise sistem bir emis sistemi (örnegin elektrik süpürgesi) yardimiyl
 
   https://github.com/user-attachments/assets/4e7f96be-68da-4bf2-be7a-c1ad1da02b06
 
-<div style="display: flex; justify-content: center; gap: 20px;">
-  <a href="https://github.com/user-attachments/assets/b571d8d4-8fc2-40d7-b4c7-0fd44b211a0b">
-    <img src="https://github.com/user-attachments/assets/b571d8d4-8fc2-40d7-b4c7-0fd44b211a0b" alt="resim1" width="750" />
-  </a>
+  - BUNUN SESLENDİRİLMESİ YAPILMASI GEREKİYOR ASANSÖRDE ÇIKILDIĞINI VE ŞU AMAÇLA YAPILMASI GEREKTİĞİNİ SÖYLEYEN BİR MONTAJ 
 
+<a href="https://github.com/user-attachments/assets/b571d8d4-8fc2-40d7-b4c7-0fd44b211a0b">
+  <img src="https://github.com/user-attachments/assets/b571d8d4-8fc2-40d7-b4c7-0fd44b211a0b" alt="" width="450" />
+</a>
+<a href="https://github.com/user-attachments/assets/4e7f96be-68da-4bf2-be7a-c1ad1da02b06">
+  <img src="https://github.com/user-attachments/assets/4e7f96be-68da-4bf2-be7a-c1ad1da02b06" alt="" width="450" />
+</a>
 
 ### 💥 2025.03.15 / KTR Raporlarının hazırlanması 
 
