@@ -20,7 +20,7 @@
 # [ Besma Bakırcı, Once Said ] 
 
 ### 2025.04.20 / Algoritma Deney Testi / Asansör Kullanıldı hızın değişimi gözlemlendi. ( Erenle birlikte yaptık )
-##### KTR de yazılan kısım : 
+##### KTR de bu kısımda bizden istenilen şu şekilde yazılmış: 
 
 - Algoritma Testleri:
 Bu test ile takimlar özgün UKB'leri ile aym sensör mimarisine sahip bir prototip olusturmalidir. Prototip için devre kartinin üretilmis olmasi gerekmemektedir. Sensörler modül olarak breadboard üzerinde bir araya getirilebilir. Devre kartini üretmis olan takimlar nihai devre kartlari ile bu testi gerçeklestirebilirler.
