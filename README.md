@@ -19,6 +19,70 @@
 
 # [ Besma Bakırcı, Once Said ] 
 
+### 2025.04.24 Mete başkana algoritma hakkında soru soruldu ve bunun çıktısı şöyle oldu : 
+
+🌟 Özet Strateji:
+
+🧠 Sensör Füzyonlama (Sensor Fusion) + 📉 Kalman Filtresi
+
+Bu iki yöntem, farklı sensörlerden gelen verileri birleştirerek daha doğru ve güvenilir ölçümler sağlar.
+
+⸻
+
+💡 Elimizdeki Üç Faktör:
+	1.	İvme (Accelerometer)
+	•	Başlangıç ve motor bitimi (burn-out) sırasında yüksek titreşim nedeniyle barometre bozulabilir.
+	•	Bunu kontrol etmek için ivmeölçer (accelerometer) kullanılır.
+	•	Kalman filtresi ile filtrelenerek anlık ivme patlamalarına karşı önlem alınır.
+	2.	Dikey Hız (Vertical Speed)
+	•	Barometre verisinden veya ivme verisinin integralinden hesaplanabilir.
+	•	Özellikle motor kapanışından sonra roketin apogee noktasına ulaşıp ulaşmadığı burada anlaşılır.
+	3.	Yükseklik (Altitude)
+	•	Barometrik sensör (BMP280 gibi) ile ölçülür ama burn-out ve ani basınç değişimlerinde güvenilirliği düşer.
+	•	Bu nedenle ivme ve dikey hız verisiyle çapraz kontrol yapılır.
+
+⸻
+
+🔍 Neden Kalman Filtresi?
+
+Kalman filtresi, sistemdeki gürültülü sensör verilerini birleştirerek en iyi tahmini yapar. Yani:
+	•	Barometre + ivmeölçer verisi → Yükseklik ve dikey hızın en güvenilir hali elde edilir.
+	•	Başlangıçta barometredeki hataları ivme ile check edersiniz.
+	•	Hata varsa Kalman filtresi bunu “güvenilir olmayan veri” olarak değerlendirip tahminini düzeltir.
+
+⸻
+
+🔄 Sensör Füzyonlama
+	•	Sensör füzyonlama, farklı kaynaklardan gelen verileri birleştirerek tek bir anlamlı veri seti üretir.
+	•	Örneğin:
+	•	BMP280 (yükseklik)
+	•	MPU6050 (ivme ve gyro)
+	•	Kalman filtresi ile bu sensörlerin birleşimi yapılır.
+
+⸻
+
+📌 Uygulamada Ne Yapılmalı?
+	1.	MPU6050 → ivme ve gyro verisini oku.
+	2.	BMP280 → basınca dayalı yükseklik verisini al.
+	3.	Tüm bu verileri Kalman filtresi ile işleyerek:
+	•	Gerçek yükseklik
+	•	Dikey hız
+	•	Apogee tespiti
+gibi önemli bilgileri güvenilir şekilde elde et.
+
+---
+
+📌 KTR Raporunda Algoritma’dan Ne Bekleniyor?
+
+📄 “Özgün UKB’lerin algoritmaları açık ve net bir şekilde açıklanmalıdır.”
+📄 “Algoritma açıklanırken karmaşık ve uzun cümleler kullanılmamalı, akış şemaları kullanılmalıdır.”
+📄 “Algoritmada kullanılan parametrelerin hangi sensörden geldiği açık ve net bir şekilde anlatılmalıdır.”
+📄 “Kurtarma sistemini tetikleyecek parametreler listelenmeli ve neden seçildiği belirtilmelidir.”
+📄 “Algoritma içerisinde haberleşme ve yer istasyonu ile ilgili adımlar var ise bunlar paylaşılmamalıdır.”
+
+
+
+
 ### 2025.04.20 / Algoritma Deney Testi / Asansör Kullanıldı hızın değişimi gözlemlendi. ( Erenle birlikte yaptık )
 ##### KTR de bu kısımda bizden istenilen şu şekilde yazılmış: 
 
