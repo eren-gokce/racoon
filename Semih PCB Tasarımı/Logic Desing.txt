@@ -1,0 +1,35 @@
+// Semih Gençay 220202023 Electrical Electronics Engineering
+// EEE 213 Introduction to Logic Term Project
+
+int inputA = 5; // A pin girişi 
+int inputB = 6; // B pin girişi 
+int outputY = 7; //  Y pin Çıkışı
+
+void setup() {
+  pinMode(inputA, OUTPUT);
+  pinMode(inputB, OUTPUT);
+  pinMode(outputY, INPUT);
+  Serial.begin(9600); // 
+  Serial.println("ID=220202023");
+  Serial.println("Semih Gençay");
+  Serial.println("Truth Table for XOR Gate");
+}
+
+void loop() {
+  for (int a = 0; a <= 1; a++) {
+    for (int b = 0; b <= 1; b++) {
+      digitalWrite(inputA, a);
+      digitalWrite(inputB, b);
+      delay(10); // ara boşluk zamanı
+      int y = digitalRead(outputY);
+      Serial.print("A: ");
+      Serial.print(a);
+      Serial.print(" B: ");
+      Serial.print(b);
+      Serial.print(" Y: ");
+      Serial.println(y);
+      delay(250); // Sonucu gösterme aralığı
+    }
+  }
+  while (true); 
+}
