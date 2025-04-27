@@ -3,10 +3,10 @@
 - [Teknofest şartnamesi](https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2025_Roket_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_PfkB5.pdf)
 
 - [Hakem yer istasyonu şartnamesi](https://github.com/user-attachments/files/18579452/EK-7_Hakem_Yer_Istasyonu_y52A5.1.docx)
-  
-# [ Ceren Sultan Çetin, Once Said ] 
 
-[Arayüz Reposu](https://github.com/CerenSultanCETIN/RocketInterface13.git)
+# [ Besma Bakırcı, Once Said ] yeni arayüz:  https://github.com/besmabakirci1/RocketUI2025
+[Yeni Arayüz ](https://github.com/besmabakirci1/RocketUI2025)
+[Eski Arayüz Reposu](https://github.com/CerenSultanCETIN/RocketInterface13.git)
 <div style="display: flex; justify-content: center; gap: 20px;">
   <a href="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6">
     <img src="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6" alt="resim1" width="750" />
@@ -15,9 +15,6 @@
   <a href="https://github.com/user-attachments/assets/648fd35b-3c85-447b-8fb1-8ce616d4887b">
     <img src="https://github.com/user-attachments/assets/648fd35b-3c85-447b-8fb1-8ce616d4887b" alt="resim1" width="750" />
   </a>
-
-
-# [ Besma Bakırcı, Once Said ] 
 
 ### 2025.04.24 Mete başkana algoritma hakkında soru soruldu ve bunun çıktısı şöyle oldu : 
 
@@ -74,11 +71,11 @@ gibi önemli bilgileri güvenilir şekilde elde et.
 
 📌 KTR Raporunda Algoritma’dan Ne Bekleniyor?
 
-📄 “Özgün UKB’lerin algoritmaları açık ve net bir şekilde açıklanmalıdır.”
-📄 “Algoritma açıklanırken karmaşık ve uzun cümleler kullanılmamalı, akış şemaları kullanılmalıdır.”
-📄 “Algoritmada kullanılan parametrelerin hangi sensörden geldiği açık ve net bir şekilde anlatılmalıdır.”
-📄 “Kurtarma sistemini tetikleyecek parametreler listelenmeli ve neden seçildiği belirtilmelidir.”
-📄 “Algoritma içerisinde haberleşme ve yer istasyonu ile ilgili adımlar var ise bunlar paylaşılmamalıdır.”
+- 📄 “Özgün UKB’lerin algoritmaları açık ve net bir şekilde açıklanmalıdır.”
+- 📄 “Algoritma açıklanırken karmaşık ve uzun cümleler kullanılmamalı, akış şemaları kullanılmalıdır.”
+- 📄 “Algoritmada kullanılan parametrelerin hangi sensörden geldiği açık ve net bir şekilde anlatılmalıdır.”
+- 📄 “Kurtarma sistemini tetikleyecek parametreler listelenmeli ve neden seçildiği belirtilmelidir.”
+- 📄 “Algoritma içerisinde haberleşme ve yer istasyonu ile ilgili adımlar var ise bunlar paylaşılmamalıdır.”
 
 
 
