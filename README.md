@@ -1,13 +1,12 @@
 # Roket Aviyonik 🚀
+## [ Besma Bakırcı, Once Said ]
 
 - [Teknofest şartnamesi](https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2025_Roket_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_PfkB5.pdf)
 
 - [Hakem yer istasyonu şartnamesi](https://github.com/user-attachments/files/18579452/EK-7_Hakem_Yer_Istasyonu_y52A5.1.docx)
 
-- [ Besma Bakırcı, Once Said ] yeni arayüz:  https://github.com/besmabakirci1/RocketUI2025
-
-[Yeni Arayüz ](https://github.com/besmabakirci1/RocketUI2025)
-[Eski Arayüz Reposu](https://github.com/CerenSultanCETIN/RocketInterface13.git)
+- [Yeni Arayüz](https://github.com/besmabakirci1/RocketUI2025)
+- [Eski Arayüz Reposu](https://github.com/CerenSultanCETIN/RocketInterface13.git)
 
 <div style="display: flex; justify-content: center; gap: 20px;">
   <a href="https://github.com/user-attachments/assets/b3c92df3-6dc9-4abe-9a28-f702d46e05a6">
