@@ -17,6 +17,23 @@
     <img src="https://github.com/user-attachments/assets/648fd35b-3c85-447b-8fb1-8ce616d4887b" alt="resim1" width="750" />
   </a>
 
+### 2025.04.27 KTR şablonundan olan görevlerim : 
+
+- Özgün UKB’lerin algoritmaları açık ve net bir şekilde açıklanmalıdır.
+ Algoritma açıklanırken karmaşık ve uzun cümleler kullanılmamalı,
+ akış şemaları kullanılmalıdır. 
+Kullanılan algoritmaya ilişkin akış şemasında; 
+algoritmada kullanılan parametrelerin hangi sensörden geldiği açık ve net bir şekilde anlatılmalıdır.
+ Kurtarma sistemini tetikleyecek parametreler listelenmeli ve neden seçildiği belirtilmelidir (kullandığı parametreleri doğru sensörlerden almayan veya eksik olarak açıklayan takımlar diskalifiye edilecektir). 
+Algoritma içerisinde haberleşme ve yer istasyonu ile ilgili adımlar var ise bunlar paylaşılmamalıdır.
+ (besma // görselleştirerek yap)
+
+- Özgün UKB’lerin test edilmesi kapsamında test cihazı ile Ö-UKB arasında çalışacak olan yazılımın UKB ana algoritması ile nasıl entegre edildiği ve çalışma yapısı açık şekilde algoritma şeması olarak paylaşılmalıdır. (semih/enes/besma)
+
+### 2025.04.26
+Deney videosu (Semih) 
+https://drive.google.com/drive/folders/1odC9xmdg6W0WZIL8I4gqv5UqY6kFndTy?usp=sharing
+
 ### 2025.04.24 Mete başkana algoritma hakkında soru soruldu ve bunun çıktısı şöyle oldu : 
 
 🌟 Özet Strateji:
