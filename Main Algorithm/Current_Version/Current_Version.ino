@@ -9,11 +9,11 @@
 Adafruit_BMP280 bmp;
 MPU6050 mpu;
 
-const int FlagButtonPin = 14; //*******************************************
-volatile bool ButtonFlag = false; //************************************
+const int FlagButtonPin = 14; //*******************************************sadece flag atlama butonu
+volatile bool ButtonFlag = false; //************************************sadece flag atlama butonu
 
-void IRAM_ATTR handleInterrupt() { //****************************************************
-  ButtonFlag = true;  // Sadece bayrak koy, Serial burada yasak!
+void IRAM_ATTR handleInterrupt() { //****************************************************sadece flag atlama butonu
+  ButtonFlag = true;
 }
 
 #pragma region timer starts timer after 10s and yukseklik
@@ -224,8 +224,8 @@ void setup() {
 
   first_flag_timer.once(10.0/*second*/, first_flag_function); //timer starts after 10s
 
-  pinMode(FlagButtonPin, INPUT_PULLDOWN);  // Buton için dahili pull-up *********************************************
-  attachInterrupt(digitalPinToInterrupt(FlagButtonPin), handleInterrupt, FALLING); //*****************************
+  pinMode(FlagButtonPin, INPUT_PULLDOWN);  // Buton için dahili pull-up *********************************************sadece flag atlama butonu
+  attachInterrupt(digitalPinToInterrupt(FlagButtonPin), handleInterrupt, FALLING); //*****************************sadece flag atlama butonu
 }
 
 void loop() {
@@ -281,13 +281,11 @@ void loop() {
 
   millis_counter = millis() - millis_saved;
 
-  if (ButtonFlag) {//*****************************************8
+  if (ButtonFlag) {//*****************************************sadece flag atlama butonu
     ButtonFlag = false;             // Bayrağı sıfırla
     Serial.println("Flag atlandi");       // Kesmede değil, burada yazdır
     flag++;
   }
-
-
 
   switch(flag){
     case 0:
@@ -299,8 +297,7 @@ void loop() {
       break;
 
     case 2:
-      apogee(); // eger hiz  100m/s den kucukse ve aci eksiye duserse parasut
-      // aci sagklikliysa ve hiz eksiye duserse parashut
+      apogee();
       break;
 
     case 3:

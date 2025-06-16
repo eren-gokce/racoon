@@ -3,7 +3,6 @@
 #include "MPU6050_6Axis_MotionApps20.h"
 #include "functions.h"
 
-// ana algoritmadaki varaible ları functions dosyasına taşır
 #pragma region global varaibles
 //flag
 volatile uint8_t flag = 254;
@@ -88,6 +87,10 @@ void alcalma(){
   }
 }
 
+void write_to_sd(){
+  // Burasi doldurulacak
+}
+
 float sum_avaragecalc = 0;
 float avarage_in_given_ms;
 unsigned int number_of_values_stored_in_sum = 1;
@@ -98,13 +101,13 @@ float avarage_in_given_time(unsigned long given_time /*as ms*/, float sensor_val
   {
       sum_avaragecalc = sum_avaragecalc + sensor_value;
       number_of_values_stored_in_sum++;
-/*       Serial.print("millis: "); Serial.println(millis());
+      /* Serial.print("millis: "); Serial.println(millis());
       Serial.print("given_time: "); Serial.println(given_time);
       Serial.print("millis_saved: "); Serial.println(millis_saved);
       Serial.print("millis_counter: "); Serial.println(millis_counter);
       Serial.print("number of values stored in sum: "); Serial.println(number_of_values_stored_in_sum); */
       Serial.print("sum: "); Serial.println(sum_avaragecalc);
-/*       Serial.print(": "); Serial.print(); */
+      /* Serial.print(": "); Serial.print(); */
 
 
       return NAN;
@@ -118,7 +121,7 @@ float avarage_in_given_time(unsigned long given_time /*as ms*/, float sensor_val
       number_of_values_stored_in_sum = 1;
     }
       avarage_in_given_ms = sum_avaragecalc / number_of_values_stored_in_sum;
-/*       Serial.print("avarage: "); Serial.println(avarage_in_given_ms);
+      /*       Serial.print("avarage: "); Serial.println(avarage_in_given_ms);
       Serial.print("given_time: "); Serial.println(given_time);
       Serial.print("millis_saved: "); Serial.println(millis_saved);
       Serial.print("millis_counter: "); Serial.println(millis_counter);

@@ -6,6 +6,9 @@ void burnout();
 void apogee();
 void parasut();
 void alcalma();
+
+void write_to_sd();
+
 float avarage_in_given_time(unsigned long given_time /*as ms*/, float sensor_value);
 
 #pragma region externs
