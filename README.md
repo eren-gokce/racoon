@@ -1,11 +1,15 @@
 # Roket Aviyonik 🚀
-## [ Besma Bakırcı, Once Said ]
 
-- [Teknofest şartnamesi](https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2025_Roket_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_PfkB5.pdf)
+### Güncel :
 
-- [Hakem yer istasyonu şartnamesi](https://github.com/user-attachments/files/18579452/EK-7_Hakem_Yer_Istasyonu_y52A5.1.docx)
+## [Yapılcaklar notu](https://ostimteknikuniversitesi-my.sharepoint.com/:w:/g/personal/230201060_ostimteknik_edu_tr/EbsuAKLU0ShNoTfdPXoBlwgBV6bBdwqXOMXw21tmuLnfXQ?e=zlj0Fm)
 
-- [Yeni Arayüz](https://github.com/besmabakirci1/RocketUI2025)
+![güncel Algo flowchart](https://github.com/user-attachments/assets/4ee9dc47-58e5-4329-be02-5780bf1bafeb)
+![güncel Algo flowchart](https://github.com/user-attachments/assets/764aee20-59d5-423e-8e08-6983022160b2)
+
+
+<details> <summary> old  </summary>
+	
 - [Eski Arayüz Reposu](https://github.com/CerenSultanCETIN/RocketInterface13.git)
 
 <div style="display: flex; justify-content: center; gap: 20px;">
@@ -987,9 +991,19 @@ void alcalmaKontrol() {
 - Roketin yere indiğinde GPS verisini kaydeder.
 
 ## 🪡 EEPROM, **GPS** ve **LoRa** modüllerinin entegrasyonu daha sonra eklenecek.
+----
 
 # [ Eren Gökçe, Once Said ] 
 
 ## [Yaptıklarımı not aldığım link](https://docs.google.com/document/d/1Ugchummm-yzFRAeQpJfb2bQv5UT_bcpwTwR8XtCUR0M/edit?usp=sharing)
 
-## [Yapılcaklar notum](https://ostimteknikuniversitesi-my.sharepoint.com/:w:/g/personal/230201060_ostimteknik_edu_tr/EbsuAKLU0ShNoTfdPXoBlwgBV6bBdwqXOMXw21tmuLnfXQ?e=zlj0Fm)
+</details>
+
+
+
+
+- [Teknofest şartnamesi](https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2025_Roket_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_PfkB5.pdf)
+
+- [Hakem yer istasyonu şartnamesi](https://github.com/user-attachments/files/18579452/EK-7_Hakem_Yer_Istasyonu_y52A5.1.docx)
+
+- [Yeni Arayüz](https://github.com/besmabakirci1/RocketUI2025)
