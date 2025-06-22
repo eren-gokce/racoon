@@ -108,8 +108,6 @@ float avarage_in_given_time(unsigned long given_time /*as ms*/, float sensor_val
       Serial.print("number of values stored in sum: "); Serial.println(number_of_values_stored_in_sum); */
       Serial.print("sum: "); Serial.println(sum_avaragecalc);
       /* Serial.print(": "); Serial.print(); */
-
-
       return NAN;
   }
   else if(number_of_values_stored_in_sum == 0 || sum_avaragecalc == 0){

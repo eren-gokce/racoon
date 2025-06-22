@@ -222,7 +222,7 @@ void setup() {
     Serial.println(")");
   }
 
-  first_flag_timer.once(10.0/*second*/, first_flag_function); //timer starts after 10s
+  first_flag_timer.once(6.0/*second*/, first_flag_function); //timer starts after 10s
 
   pinMode(FlagButtonPin, INPUT_PULLDOWN);  // Buton için dahili pull-up *********************************************sadece flag atlama butonu
   attachInterrupt(digitalPinToInterrupt(FlagButtonPin), handleInterrupt, FALLING); //*****************************sadece flag atlama butonu
