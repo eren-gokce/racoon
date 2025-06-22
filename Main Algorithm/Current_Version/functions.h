@@ -10,12 +10,13 @@
 #include <SoftwareSerial.h>
 #include <TinyGPS++.h>
 
+
+#pragma region lora
 extern HardwareSerial  SerialAT;
 extern LoRa_E32        e32ttl;
 extern SoftwareSerial  gpsSW;
 extern TinyGPSPlus     gps;
 
-#pragma region lora
 #define LORA_RX     16
 #define LORA_TX     17
 #define GPS_RX_PIN  27
