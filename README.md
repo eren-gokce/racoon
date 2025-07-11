@@ -20,7 +20,7 @@ ESP32 platformunda kullanılan Task Watchdog Timer (TWDT), belirli görevlerin (
 Kullanıcı tarafından başlatılarak aktif hâle getirilen TWDT’ye, izlenmesi istenen görevler abone edilir. 
 Bu görevler, belirlenen zaman aralığında esp_task_wdt_reset() fonksiyonu ile watchdog'u “beslemeli”; aksi takdirde 
 TWDT bu görevin kilitlendiğini varsayarak sistemin hata mesajı üretmesini (panic) ya da resetlenmesini sağlar.
-Roket sistemleri gibi güvenlik-kritik uygulamalarda TWDT, sistemin ana görevlerinin donması, veri akışının kesilmesi veya 
+Güvenlik-kritik uygulamalarda TWDT, sistemin ana görevlerinin donması, veri akışının kesilmesi veya 
 infinite loop gibi yazılım hatalarının oluşması durumunda müdahale ederek sistemin kendi kendini kurtarabilmesini sağlar.
 
 ```cpp
