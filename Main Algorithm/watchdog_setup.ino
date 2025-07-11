@@ -33,3 +33,17 @@ void setup() {
   esp_task_wdt_init(&twdt_config); // Watchdog’u başlat
   esp_task_wdt_add(NULL);          // Mevcut görev (loop task) TWDT’ye abone edildi
 }
+
+void loop() {
+  // Uçuş kontrol fonksiyonlarını çağır
+  kalkis();
+  burnout();
+  apogee();
+  parasut();
+  alcalma();
+  call_lora();
+
+  esp_task_wdt_reset(); // 🔁 watchdog'u besle
+
+  delay(200); // burada zaten delay varmış, sorun değil
+}
