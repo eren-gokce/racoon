@@ -43,7 +43,8 @@ void loop() {
   alcalma();
   call_lora();
 
-  esp_task_wdt_reset(); // 🔁 watchdog'u besle
+  esp_task_wdt_reset(); // watchdog'u besle
+  // bu komut çalışmadığında sistem kilitlendiğini düşünüp reset atacak.
 
   delay(200);
 }
