@@ -4,11 +4,11 @@
 
 ## [Yapılcaklar notu](https://ostimteknikuniversitesi-my.sharepoint.com/:w:/g/personal/230201060_ostimteknik_edu_tr/EbsuAKLU0ShNoTfdPXoBlwgBV6bBdwqXOMXw21tmuLnfXQ?e=zlj0Fm)
 
-![güncel Algo flowchart](https://github.com/user-attachments/assets/4ee9dc47-58e5-4329-be02-5780bf1bafeb)
-![güncel Algo flowchart](https://github.com/user-attachments/assets/764aee20-59d5-423e-8e08-6983022160b2)
-
 
 <details> <summary> old  </summary>
+
+![güncel Algo flowchart](https://github.com/user-attachments/assets/4ee9dc47-58e5-4329-be02-5780bf1bafeb)
+![güncel Algo flowchart](https://github.com/user-attachments/assets/764aee20-59d5-423e-8e08-6983022160b2)
 	
 - [Eski Arayüz Reposu](https://github.com/CerenSultanCETIN/RocketInterface13.git)
 
