@@ -45,5 +45,5 @@ void loop() {
 
   esp_task_wdt_reset(); // 🔁 watchdog'u besle
 
-  delay(200); // burada zaten delay varmış, sorun değil
+  delay(200);
 }
