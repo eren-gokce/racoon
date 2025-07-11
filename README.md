@@ -23,6 +23,37 @@ TWDT bu görevin kilitlendiğini varsayarak sistemin hata mesajı üretmesini (p
 Roket sistemleri gibi güvenlik-kritik uygulamalarda TWDT, sistemin ana görevlerinin donması, veri akışının kesilmesi veya 
 infinite loop gibi yazılım hatalarının oluşması durumunda müdahale ederek sistemin kendi kendini kurtarabilmesini sağlar.
 
+```cpp
+#include "esp_task_wdt.h"
+
+void setup() {
+  // ... mevcut kurulumlar ...
+
+  esp_task_wdt_config_t twdt_config = {
+    .timeout_ms = 3000, // 3 saniye içinde resetlenmeli
+    .idle_core_mask = 0, // idle task izlenmiyor
+    .trigger_panic = true
+  };
+
+  esp_task_wdt_init(&twdt_config); // Watchdog’u başlat
+  esp_task_wdt_add(NULL);          // Mevcut görev (loop task) TWDT’ye abone edildi
+}
+
+void loop() {
+  // Uçuş kontrol fonksiyonlarını çağır
+  kalkis();
+  burnout();
+  apogee();
+  parasut();
+  alcalma();
+  call_lora();
+
+  esp_task_wdt_reset(); // 🔁 watchdog'u besle
+
+  delay(200);
+}
+```
+
 
 ## [Yapılcaklar notu](https://ostimteknikuniversitesi-my.sharepoint.com/:w:/g/personal/230201060_ostimteknik_edu_tr/EbsuAKLU0ShNoTfdPXoBlwgBV6bBdwqXOMXw21tmuLnfXQ?e=zlj0Fm)
 
