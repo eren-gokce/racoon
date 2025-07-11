@@ -2,7 +2,7 @@
 
 ### Güncel :
 
-### Watchdog:
+<details> <summary> Watchdog </summary>
 
 Interrupt Watchdog (IWDT)
 RTC Watchdog Timer (RTC_WDT)
