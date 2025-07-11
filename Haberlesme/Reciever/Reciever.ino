@@ -44,22 +44,23 @@ void loop() {
     Payload p;
     memcpy(&p, rc.data, sizeof(p));
 
+    Serial.print("Team ID: "); Serial.println(p.teamID);
     Serial.print("TX bytes total: "); Serial.println(p.packetCounter);
-  Serial.print("  BaroAlt: ");   Serial.println(p.baroAlt);
-  Serial.print("  GPSAlt: ");    Serial.println(p.gpsAlt);
-  Serial.print("  Lat: ");       Serial.println(p.lat,6);
-  Serial.print("  Lon: ");       Serial.println(p.lon,6);
-  Serial.print("  Yaw: ");       Serial.println(p.lora_yaw);
-  Serial.print("  Pitch: ");       Serial.println(p.lora_pitch);
-  Serial.print("  row: ");       Serial.println(p.lora_row);
+    Serial.print("  BaroAlt: ");   Serial.println(p.baroAlt);
+    Serial.print("  GPSAlt: ");    Serial.println(p.gpsAlt);
+    Serial.print("  Lat: ");       Serial.println(p.lat,6);
+    Serial.print("  Lon: ");       Serial.println(p.lon,6);
+    Serial.print("  Yaw: ");       Serial.println(p.lora_yaw);
+    Serial.print("  Pitch: ");       Serial.println(p.lora_pitch);
+    Serial.print("  row: ");       Serial.println(p.lora_row);
 
-  Serial.print("  Accel : "); 
+    Serial.print("  Accel : "); 
     Serial.print(p.accelX,3); Serial.print(", ");
     Serial.print(p.accelY,3); Serial.print(", ");
     Serial.println(p.accelZ,3);
   
-  Serial.print("  Speed: ");       Serial.println(p.speed);
+    Serial.print("  Speed: ");       Serial.println(p.speed);
 
-  Serial.print("  Status: ");    Serial.println(p.status);
+   Serial.print("  Status: ");    Serial.println(p.status);
   }
 }
