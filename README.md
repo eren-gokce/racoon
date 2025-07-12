@@ -53,7 +53,7 @@ void loop() {
   delay(200);
 }
 ```
-
+</details>
 
 ## [Yapılcaklar notu](https://ostimteknikuniversitesi-my.sharepoint.com/:w:/g/personal/230201060_ostimteknik_edu_tr/EbsuAKLU0ShNoTfdPXoBlwgBV6bBdwqXOMXw21tmuLnfXQ?e=zlj0Fm)
 
