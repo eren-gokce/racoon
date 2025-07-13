@@ -7,6 +7,7 @@
 #include <SoftwareSerial.h>
 #include <TinyGPS++.h>
 #include <EEPROM.h> // flasha veri yazma
+#include "esp_task_wdt.h" // Task Watchdog Timer
 
 /*
   Switch acik oldugu zaman flashtaki veri okunacak
@@ -282,6 +283,17 @@ void setup() {
 
   pinMode(FlagButtonPin, INPUT_PULLDOWN);  // Buton için dahili pull-up *********************************************sadece flag atlama butonu
   attachInterrupt(digitalPinToInterrupt(FlagButtonPin), handleInterrupt, FALLING); //*****************************sadece flag atlama butonu
+
+
+  esp_task_wdt_config_t twdt_config = { // Watchdog configuration
+    .timeout_ms = 3000, // 3 saniye içinde resetlenmeli
+    .idle_core_mask = 0, // idle task izlenmiyor
+    .trigger_panic = true
+  };
+
+  esp_task_wdt_init(&twdt_config); // Watchdog’u başlat
+  esp_task_wdt_add(NULL);          // Mevcut görev (loop task) TWDT’ye abone edildi
+}
 }
 
 void loop() {
@@ -387,5 +399,8 @@ void loop() {
       alcalma();
       parasut_tekrarla(1/*;Ana parasut icin*/);
       break;
+    
+  esp_task_wdt_reset(); // watchdog'u besle
+
   }
 }
