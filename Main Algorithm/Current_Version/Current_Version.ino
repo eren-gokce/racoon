@@ -286,7 +286,7 @@ void setup() {
   lora_timer = millis();
 
 
-    esp_task_wdt_config_t twdt_config = { // task watchdog configuraiton
+  esp_task_wdt_config_t twdt_config = { // task watchdog configuraiton
     .timeout_ms = 3000, // 3 saniye içinde resetlenmeli
     .idle_core_mask = 0, // idle task izlenmiyor
     .trigger_panic = true
@@ -294,8 +294,6 @@ void setup() {
 
   esp_task_wdt_init(&twdt_config); // Watchdog’u başlat
   esp_task_wdt_add(NULL);          // Mevcut görev (loop task) TWDT’ye abone edildi
-}
-
 }
 
 void loop() {
@@ -322,10 +320,10 @@ void loop() {
   ivme = m_n[2];
 
   // Kalman filtresi sonuçları: m_n[0] = güncellenmiş altimetre, m_n[1] = hız, m_n[2] = ivme
-  Serial.print(" | Altituderaw: "); Serial.print(yukseklikraw);
-  Serial.print(" | Altitude: "); Serial.print(yukseklik);
-  Serial.print(" | Speed: "); Serial.print(hiz);
-  Serial.print(" | Accel: "); Serial.print(ivme);
+  // Serial.print(" | Altituderaw: "); Serial.print(yukseklikraw);
+  // Serial.print(" | Altitude: "); Serial.print(yukseklik);
+  // Serial.print(" | Speed: "); Serial.print(hiz);
+  // Serial.print(" | Accel: "); Serial.print(ivme);
 
   Serial.print(" | Current Flag: "); Serial.println(flag);
 

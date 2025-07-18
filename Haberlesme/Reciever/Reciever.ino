@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <LoRa_E32.h>
 #include <cstring>  // memcpy
+#include "driver/uart.h"
 
 HardwareSerial SerialAT(2);
 #define LORA_RX 16
@@ -28,7 +29,7 @@ struct Payload {
 #pragma pack(pop)
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   SerialAT.begin(9600, SERIAL_8N1, LORA_RX, LORA_TX);
   while (!Serial);
   delay(100);
@@ -37,6 +38,10 @@ void setup() {
 }
 
 void loop() {
+
+  Serial.print("Gelen byte: "); Serial.print(e32ttl.available());
+  Serial.print(" | Payload byte: "); Serial.println(sizeof(Payload));
+
   if (e32ttl.available() >= sizeof(Payload)) {
     ResponseStructContainer rc = e32ttl.receiveMessage(sizeof(Payload));
     Serial.println(rc.status.getResponseDescription());
@@ -61,6 +66,7 @@ void loop() {
   
     Serial.print("  Speed: ");       Serial.println(p.speed);
 
-   Serial.print("  Status: ");    Serial.println(p.status);
+    Serial.print("  Status: ");    Serial.println(p.status);
   }
+  // uart_flush_input(UART_NUM_2); // depolanan byte lari silme
 }

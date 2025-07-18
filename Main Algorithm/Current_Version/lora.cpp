@@ -42,13 +42,9 @@ void lora_loop(){
 
   gpsSW.listen();
 
-  while (gpsSW.available() > 0){
-  Serial.write(gpsSW.read());    // saf gps değerini görmek için eklendi
-  }
-
   static float lastGpsAlt = 0.0f;
 
-  while (millis() - t0 < 150) {
+  while (millis() - t0 < 50) {
     if (gpsSW.available() && gps.encode(gpsSW.read())) {
       if (gps.altitude.isUpdated()) {
         lastGpsAlt = gps.altitude.meters();
@@ -102,10 +98,4 @@ void lora_loop(){
     sizeof(p)
   );
   Serial.print("LoRa: "); Serial.println(rs.getResponseDescription());
-
-  // lora_millis_saved = millis();
-  //}
-
-  // Döngüyü 1 saniyeye tamamla
-  // while (millis() - t0 < 1000) delay(5);
 }

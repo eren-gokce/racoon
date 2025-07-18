@@ -144,7 +144,7 @@ float avarage_in_given_time(unsigned long given_time /*as ms*/, float sensor_val
     Serial.print("millis_saved: "); Serial.println(millis_saved);
     Serial.print("millis_counter: "); Serial.println(millis_counter);
     Serial.print("number of values stored in sum: "); Serial.println(number_of_values_stored_in_sum); */
-    Serial.print("sum: "); Serial.println(sum_avaragecalc);
+    // Serial.print("sum: "); Serial.println(sum_avaragecalc);
     /* Serial.print(": "); Serial.print(); */
     return NAN;
   }
@@ -162,14 +162,14 @@ float avarage_in_given_time(unsigned long given_time /*as ms*/, float sensor_val
     Serial.print("millis_counter: "); Serial.println(millis_counter);
     Serial.print("number of values stored in sum: "); Serial.println(number_of_values_stored_in_sum);
     Serial.print("sum: "); Serial.println(sum_avaragecalc); */
-    Serial.print("sum: "); Serial.print(sum_avaragecalc);
-    Serial.print("avarage_in_given_ms: "); Serial.print(avarage_in_given_ms);
+    // Serial.print("sum: "); Serial.print(sum_avaragecalc);
+    // Serial.print("avarage_in_given_ms: "); Serial.print(avarage_in_given_ms);
     sum_avaragecalc = 0;
     number_of_values_stored_in_sum = 0;
     millis_saved = millis();
     onceki_ortalama = son_ortalama;
     son_ortalama = avarage_in_given_ms;
-    Serial.print("   onceki_ortalama"); Serial.println(onceki_ortalama);
+    // Serial.print("   onceki_ortalama"); Serial.println(onceki_ortalama);
     return avarage_in_given_ms;
   }
 }

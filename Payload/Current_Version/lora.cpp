@@ -29,9 +29,7 @@ static uint8_t packetCounter = 0;
 // }
 
 void call_lora(){
-  if(flag != 254){
     lora_loop();
-  }
 }
 
 void lora_loop(){
@@ -40,13 +38,9 @@ void lora_loop(){
 
   gpsSW.listen();
 
-  while (gpsSW.available() > 0){
-  Serial.write(gpsSW.read());    // saf gps değerini görmek için eklendi
-  }
-
   static float lastGpsAlt = 0.0f;
 
-  while (millis() - t0 < 150) {
+  while (millis() - t0 < 50) {
     if (gpsSW.available() && gps.encode(gpsSW.read())) {
       if (gps.altitude.isUpdated()) {
         lastGpsAlt = gps.altitude.meters();
@@ -55,7 +49,7 @@ void lora_loop(){
   }
 
   // payload’u doldur
-  p.teamID  = 1;
+  p.teamID  = 0;
 
   // <-- BURASI DEĞİŞTİ: packetCounter'ı her seferinde gönderilen byte kadar artırıyoruz
   packetCounter = packetCounter + sizeof(Payload);  

@@ -234,8 +234,6 @@ void setup() {
   esp_task_wdt_add(NULL);          // Mevcut görev (loop task) TWDT’ye abone edildi
 }
 
-}
-
 void loop() {
   if (!DMPReady) return;
 
@@ -251,7 +249,7 @@ void loop() {
   // MPU6050'dan okunan vertical ivme: gravity.z (kontrol girişi olarak kullanılacak)
   float accel_z = gravity.z;  
   ivme_x = gravity.x;
-  ivme_y = gravity.y
+  ivme_y = gravity.y;
 
   // Kalman filtresi uygulaması: altimetre ölçümü, kontrol girişi olarak accel_z
   kalmanFilter_modified(altitude, accel_z);
@@ -268,12 +266,12 @@ void loop() {
   pitchDeg = ypr[1] * 180.0 / PI;
   rollDeg = ypr[2] * 180.0 / PI;
 
-  millis_counter = millis() - millis_saved;
+  call_lora();  // Sadece tetik alındığında veri gönder
 
-  if(millis() - lora_timer >= 0){
-    call_lora();
-    lora_timer = millis();
-  }
+  // if(millis() - lora_timer >= 0){
+  //   call_lora();
+  //   lora_timer = millis();
+  // }
 
   esp_task_wdt_reset(); // watchdog'u besle
   
