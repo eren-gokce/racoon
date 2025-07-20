@@ -29,16 +29,12 @@ static uint8_t packetCounter = 0;
 // }
 
 void call_lora(){
-  if(flag != 254){
     lora_loop();
-  }
 }
 
 void lora_loop(){
   unsigned long t0 = millis();
   Payload p;
-  //lora_time_passed = millis() - lora_millis_saved;
-  //if(lora_time_passed >= 400){
 
   gpsSW.listen();
 
@@ -53,43 +49,43 @@ void lora_loop(){
   }
 
   // payload’u doldur
-  p.id  = 151;                 
+  p.teamID  = 0;
+
+  // <-- BURASI DEĞİŞTİ: packetCounter'ı her seferinde gönderilen byte kadar artırıyoruz
+  packetCounter = packetCounter + sizeof(Payload);  
+  p.packetCounter = packetCounter;                    
+
   p.baroAlt = yukseklik;
   p.gpsAlt  = lastGpsAlt;
   p.lat     = gps.location.isValid() ? gps.location.lat() : NAN;
   p.lon     = gps.location.isValid() ? gps.location.lng() : NAN;
+  p.lora_yaw = yaw;
   p.lora_pitch = pitch;
-  p.lora_roll  = roll;
-  p.lora_yaw   = yaw;
-  p.accelX  = 0;
+  p.lora_roll = roll;
+  p.accelX  = ivme_x;
   p.accelY  = ivme;
-  p.accelZ  = 0;
-  p.degree  = 0; // fonksiyonu yazilcak
-  p.speed   = hiz;
-  p.status  = 0;  // teknofestin isteigi flagler yazilcak;
-  p.crc     = 0; //crc fonksiyonu atilcak
+  p.accelZ  = ivme_y;
+  p.speed = hiz;
+  p.status  = 0;
 
   // ▶️▶️ Debug TX:
-  Serial.print("  id: ");   Serial.println(p.id);
-
+  Serial.print("TX bytes total: "); Serial.println(p.packetCounter);
   Serial.print("  BaroAlt: ");   Serial.println(p.baroAlt);
   Serial.print("  GPSAlt: ");    Serial.println(p.gpsAlt);
   Serial.print("  Lat: ");       Serial.println(p.lat,6);
   Serial.print("  Lon: ");       Serial.println(p.lon,6);
-
-  Serial.print("  Pitch: ");     Serial.println(p.lora_pitch);
-  Serial.print("  Roll: ");      Serial.println(p.lora_roll);
   Serial.print("  Yaw: ");       Serial.println(p.lora_yaw);
+  Serial.print("  Pitch: ");       Serial.println(p.lora_pitch);
+  Serial.print("  roll: ");       Serial.println(p.lora_roll);
 
-  Serial.print("  Accel X : ");  Serial.print(p.accelX,3);
-  Serial.print("  Accel Y : ");  Serial.print(p.accelY,3);
-  Serial.print("  Accel Z : ");  Serial.println(p.accelZ,3);
-
-  Serial.print("  Degree : ");  Serial.println(p.degree);
+  Serial.print("  Accel : "); 
+    Serial.print(p.accelX,3); Serial.print(", ");
+    Serial.print(p.accelY,3); Serial.print(", ");
+    Serial.println(p.accelZ,3);
+  
   Serial.print("  Speed: ");       Serial.println(p.speed);
 
   Serial.print("  Status: ");    Serial.println(p.status);
-  Serial.print("  CRC:  ");     Serial.println(p.crc);
 
   // LoRa ile gönder
   ResponseStatus rs = e32ttl.sendFixedMessage(
@@ -98,4 +94,10 @@ void lora_loop(){
     sizeof(p)
   );
   Serial.print("LoRa: "); Serial.println(rs.getResponseDescription());
+
+  // lora_millis_saved = millis();
+  //}
+
+  // Döngüyü 1 saniyeye tamamla
+  // while (millis() - t0 < 1000) delay(5);
 }

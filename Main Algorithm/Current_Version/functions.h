@@ -32,20 +32,21 @@ extern TinyGPSPlus     gps;
 
 #pragma pack(push,1)
 struct Payload {
-  uint8_t teamID;
-  uint8_t packetCounter;
+  uint8_t id;
   float   baroAlt;
   float   gpsAlt;
   float   lat;
   float   lon;
-  float   lora_yaw;
   float   lora_pitch;
-  float   lora_row;
+  float   lora_roll;
+  float   lora_yaw;
   float   accelX;
   float   accelY;
   float   accelZ;
-  float   speed;
+  float   degree; // diklik acisi
+  float   speed; // ek benim istedigim bilgi
   uint8_t status;
+  uint8_t crc;
 };
 #pragma pack(pop)
 #pragma endregion
@@ -72,9 +73,9 @@ extern float yukseklik; // m_n[0] - yukseklikraw
 extern float hiz; // m_n[1]
 extern float ivme; // m_n[2]
 //ypr değerleri
-extern float yaw;
 extern float pitch;
-extern float row;
+extern float roll;
+extern float yaw;
 //ypr derece degerleri
 extern float yawDeg;
 extern float pitchDeg;

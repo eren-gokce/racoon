@@ -4,6 +4,7 @@
 
 #include <Wire.h>
 #include <Adafruit_BMP280.h>
+#include "MPU6050_6Axis_MotionApps20.h"
 #include "functions.h"
 #include <LoRa_E32.h>
 #include <SoftwareSerial.h>
@@ -13,7 +14,6 @@
 
 void call_lora();
 //void lora_counter();
-uint8_t calculateCRC8(const uint8_t* data, size_t len);
 
 extern HardwareSerial  SerialAT;
 extern LoRa_E32        e32ttl;
@@ -28,15 +28,20 @@ extern TinyGPSPlus     gps;
 
 #pragma pack(push,1)
 struct Payload {
-  uint8_t id;
+  uint8_t teamID;
+  uint8_t packetCounter;
   float   baroAlt;
   float   gpsAlt;
   float   lat;
   float   lon;
-  float   pressure;
-  float   temp;
-  float   humidity;
-  uint8_t crc;
+  float   lora_yaw;
+  float   lora_pitch;
+  float   lora_roll;
+  float   accelX;
+  float   accelY;
+  float   accelZ;
+  float   speed;
+  uint8_t status;
 };
 #pragma pack(pop)
 #pragma endregion
@@ -44,12 +49,21 @@ struct Payload {
 void lora_loop();
 
 #pragma region externs
-
-extern float yukseklikraw;
-extern float yukseklik;
-extern float sicaklik;
-extern float basinc;
-extern float nem;
+// m_n lerin değerleri
+extern float yukseklikraw; //m_n[0]
+extern float yukseklik; // m_n[0] - yukseklikraw
+extern float hiz; // m_n[1]
+extern float ivme; // m_n[2]
+extern float ivme_x;
+extern float ivme_y;
+//ypr değerleri
+extern float yaw;
+extern float pitch;
+extern float roll;
+//ypr derece degerleri
+extern float yawDeg;
+extern float pitchDeg;
+extern float rollDeg;
 
 #pragma endregion
 

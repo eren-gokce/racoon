@@ -9,19 +9,9 @@
 #include <EEPROM.h> // flasha veri yazma
 #include "esp_task_wdt.h" // Task watchdog timer
 
-/*
-  Switch acik oldugu zaman flashtaki veri okunacak
-  kapaliysa ilk acis
-  roketi ucusa hazirlamak icin once switch kapali acilmali sonra sistem kapatilip switch acik olarak baslatilmali
-*/
-
-  unsigned long lora_timer;
+unsigned long lora_timer;
 
 #define INTERRUPT_PIN 2
-
-#define SWITCH_PIN 35 // flag icin switch
-
-volatile bool switch_state; // flag icin switch
 
 //diger nesneler
 HardwareSerial  SerialAT(2);
@@ -32,36 +22,6 @@ TinyGPSPlus     gps;
 // Sensör nesneleri
 Adafruit_BMP280 bmp;
 MPU6050 mpu;
-
-const int FlagButtonPin = 14; //*******************************************sadece flag atlama butonu
-volatile bool ButtonFlag = false; //************************************sadece flag atlama butonu
-
-void IRAM_ATTR handleInterrupt() { //****************************************************sadece flag atlama butonu
-  ButtonFlag = true;
-}
-
-#pragma region timer starts timer after 10s and yukseklik
-#include <Ticker.h>
-void first_flag_function(){
-  if(switch_state == HIGH){
-    EEPROM.get(1, yukseklikraw);
-    flag = EEPROM.read(0); // 0. byte'tan oku
-    Serial.println("eepromdan veri okundu, veri: ");
-    Serial.println(flag);
-  }
-  else{
-    yukseklikraw = yukseklik;
-    EEPROM.put(1, yukseklikraw);
-    EEPROM.commit();
-    flag = 0;
-    EEPROM.write(0, flag);
-    EEPROM.commit();
-    Serial.println("Kalibrasyon Tamamlandı");
-  }
-}
-Ticker flag_ticker;
-#pragma endregion
-
 
 #pragma region Kalman Filter
 
@@ -225,23 +185,6 @@ void setup() {
   gpsSW.begin(GPS_BAUD); //lora
   e32ttl.begin(); // lora
 
-  if (!EEPROM.begin(5/* Kaç byte'lık yer ayıracağın (1–512 arası)*/)) {
-    Serial.println("EEPROM cannot started");
-    return;
-  }
-
-
-  pinMode(SWITCH_PIN, INPUT); // flag icin switch
-
-  switch_state = digitalRead(SWITCH_PIN); // flag icin switch
-
-  pinMode(SURUKLENME_PARASUT_PIN, OUTPUT);
-  pinMode(ANA_PARASUT_PIN, OUTPUT);
-
-  digitalWrite(SURUKLENME_PARASUT_PIN, LOW);
-  digitalWrite(ANA_PARASUT_PIN, LOW);
-
-
   // Optimize edilmiş Q ve R parametrelerini ekrana yazdırıyoruz:
   Serial.println("Optimized Kalman Filter Parameters:");
   Serial.println("Q:");
@@ -279,12 +222,7 @@ void setup() {
     Serial.println(")");
   }
 
-  flag_ticker.once(1.0/*second*/, first_flag_function); //timer starts after 10s
-  pinMode(FlagButtonPin, INPUT_PULLDOWN);  // Buton için dahili pull-up *********************************************sadece flag atlama butonu
-  attachInterrupt(digitalPinToInterrupt(FlagButtonPin), handleInterrupt, FALLING); //*****************************sadece flag atlama butonu
-
   lora_timer = millis();
-
 
   esp_task_wdt_config_t twdt_config = { // task watchdog configuraiton
     .timeout_ms = 3000, // 3 saniye içinde resetlenmeli
@@ -310,94 +248,30 @@ void loop() {
   float altitude = bmp.readAltitude(1013.25);
   // MPU6050'dan okunan vertical ivme: gravity.z (kontrol girişi olarak kullanılacak)
   float accel_z = gravity.z;  
+  ivme_x = gravity.x;
+  ivme_y = gravity.y;
 
   // Kalman filtresi uygulaması: altimetre ölçümü, kontrol girişi olarak accel_z
   kalmanFilter_modified(altitude, accel_z);
 
-  //m_n[] lerin normal adlara esitlenmesi
   yukseklik = m_n[0] - yukseklikraw;
   hiz = m_n[1];
   ivme = m_n[2];
 
-  // Kalman filtresi sonuçları: m_n[0] = güncellenmiş altimetre, m_n[1] = hız, m_n[2] = ivme
-  // Serial.print(" | Altituderaw: "); Serial.print(yukseklikraw);
-  // Serial.print(" | Altitude: "); Serial.print(yukseklik);
-  // Serial.print(" | Speed: "); Serial.print(hiz);
-  // Serial.print(" | Accel: "); Serial.print(ivme);
-
-  Serial.print(" | Current Flag: "); Serial.println(flag);
-
-
+  yaw = ypr[0];
   pitch = ypr[1];
   roll = ypr[2];
-  yaw = ypr[0];
 
-  // MPU6050 açıları (Yaw, Pitch, Roll) seri yazdırma
-  //Serial.print("Yaw: "); Serial.print(ypr[0], 4);
-  //Serial.print(" | Pitch: "); Serial.print(ypr[1], 4);
-  //Serial.print(" | Roll: "); Serial.println(ypr[2], 4);
-
-  // Derece cinsinden açıları da yazdırma
   yawDeg = ypr[0] * 180.0 / PI;
   pitchDeg = ypr[1] * 180.0 / PI;
   rollDeg = ypr[2] * 180.0 / PI;
-  //Serial.print("Yaw (°): "); Serial.print(yawDeg, 2);
-  //Serial.print(" | Pitch (°): "); Serial.print(pitchDeg, 2);
-  //Serial.print(" | Roll (°): "); Serial.println(rollDeg, 2);
 
-  //delay(120);  // dt ~ 0.12 s //degistirildi 120 idi
+  call_lora();  // Sadece tetik alındığında veri gönder
 
-  millis_counter = millis() - millis_saved;
-
-  if (ButtonFlag) {//*****************************************sadece flag atlama butonu
-    ButtonFlag = false;             // Bayrağı sıfırla
-    Serial.println("Flag atlandi");       // Kesmede değil, burada yazdır
-    flag++;
-    EEPROM.write(0, flag); //veriyi flaha yaz
-    EEPROM.commit();  // veriyi kalicilastir
-  }
-
-  if (switch_state == HIGH){
-    Serial.print("switch is high and eeprom value is ");
-    int asd = EEPROM.read(0); // 0. byte'tan oku
-    Serial.println(asd);
-    
-  }
-  else if(switch_state == LOW){
-    Serial.println("switch is low");
-  }
-
-  if(millis() - lora_timer >= 0){
-    call_lora();
-    lora_timer = millis();
-  }
-
-  switch(flag){
-    case 0:
-      kalkis();
-      break;
-    
-    case 1:
-      burnout();
-      break;
-
-    case 2:
-      apogee();
-      break;
-
-    case 3:
-      parasut_tekrarla(0/* 0: Suruklenme parasutu, 1: Ana parasut */);
-      break;
-
-    case 4:
-      parasut();
-      break;
-
-    case 5:
-      alcalma();
-      parasut_tekrarla(1/*;Ana parasut icin*/);
-      break;
-  }
+  // if(millis() - lora_timer >= 0){
+  //   call_lora();
+  //   lora_timer = millis();
+  // }
 
   esp_task_wdt_reset(); // watchdog'u besle
   

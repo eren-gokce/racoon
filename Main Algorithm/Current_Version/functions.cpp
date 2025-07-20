@@ -19,7 +19,7 @@ float ivme; // m_n[2]
 //ypr değerleri
 float yaw;
 float pitch;
-float row;
+float roll;
 //ypr derece degerleri
 float yawDeg;
 float pitchDeg;

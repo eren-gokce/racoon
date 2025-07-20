@@ -1,32 +1,34 @@
 //lora.cpp
 #include <Wire.h>
 #include <Adafruit_BMP280.h>
-#include "MPU6050_6Axis_MotionApps20.h"
 #include "functions.h"
 #include <LoRa_E32.h>
 #include <SoftwareSerial.h>
 #include <TinyGPS++.h>
 
-static uint8_t packetCounter = 0;
+#pragma region globals
 
-// unsigned long lora_millis_saved = 0;
-// unsigned long lora_time_passed;
+float yukseklikraw;
+float yukseklik;
+float sicaklik;
+float basinc;
+float nem;
 
-// void lora_counter(){
-//   Payload p;
-//   lora_time_passed = millis() - lora_millis_saved;
-//   if(lora_time_passed >= 400){
-//     //send lora
-//     ResponseStatus rs = e32ttl.sendFixedMessage(
-//       0, 40, 23,
-//       reinterpret_cast<uint8_t*>(&p),
-//       sizeof(p)
-//     );
-//     Serial.print("LoRa: "); Serial.println(rs.getResponseDescription());
+#pragma endregion
 
-//     lora_millis_saved = millis();
-//   }
-// }
+uint8_t calculateCRC8(const uint8_t* data, size_t len) {
+  uint8_t crc = 0;
+  for (size_t i = 0; i < len; i++) {
+    crc ^= data[i];
+    for (uint8_t b = 0; b < 8; b++) {
+      if (crc & 0x80)
+        crc = (crc << 1) ^ 0x31;
+      else
+        crc <<= 1;
+    }
+  }
+  return crc;
+}
 
 void call_lora(){
     lora_loop();
@@ -49,43 +51,27 @@ void lora_loop(){
   }
 
   // payload’u doldur
-  p.teamID  = 0;
-
-  // <-- BURASI DEĞİŞTİ: packetCounter'ı her seferinde gönderilen byte kadar artırıyoruz
-  packetCounter = packetCounter + sizeof(Payload);  
-  p.packetCounter = packetCounter;                    
-
+  p.id      = 131;
   p.baroAlt = yukseklik;
   p.gpsAlt  = lastGpsAlt;
   p.lat     = gps.location.isValid() ? gps.location.lat() : NAN;
   p.lon     = gps.location.isValid() ? gps.location.lng() : NAN;
-  p.lora_yaw = yaw;
-  p.lora_pitch = pitch;
-  p.lora_roll = roll;
-  p.accelX  = ivme_x;
-  p.accelY  = ivme;
-  p.accelZ  = ivme_y;
-  p.speed = hiz;
-  p.status  = 0;
+  p.pressure= basinc;
+  p.temp    = sicaklik;
+  p.humidity= 0; // nem sensörü elde edince düzenlencek
+  p.crc     = calculateCRC8((uint8_t*)&p, sizeof(Payload) - sizeof(p.crc));
 
   // ▶️▶️ Debug TX:
-  Serial.print("TX bytes total: "); Serial.println(p.packetCounter);
+  Serial.print("  Id: "); Serial.println(p.id);
   Serial.print("  BaroAlt: ");   Serial.println(p.baroAlt);
   Serial.print("  GPSAlt: ");    Serial.println(p.gpsAlt);
   Serial.print("  Lat: ");       Serial.println(p.lat,6);
   Serial.print("  Lon: ");       Serial.println(p.lon,6);
-  Serial.print("  Yaw: ");       Serial.println(p.lora_yaw);
-  Serial.print("  Pitch: ");       Serial.println(p.lora_pitch);
-  Serial.print("  roll: ");       Serial.println(p.lora_roll);
+  Serial.print("  Pressure: ");       Serial.println(p.pressure);
+  Serial.print("  Temp: ");       Serial.println(p.temp);
+  Serial.print("  Humidity: ");       Serial.println(p.humidity);
 
-  Serial.print("  Accel : "); 
-    Serial.print(p.accelX,3); Serial.print(", ");
-    Serial.print(p.accelY,3); Serial.print(", ");
-    Serial.println(p.accelZ,3);
-  
-  Serial.print("  Speed: ");       Serial.println(p.speed);
-
-  Serial.print("  Status: ");    Serial.println(p.status);
+  Serial.print("  CRC: ");       Serial.println(p.crc);
 
   // LoRa ile gönder
   ResponseStatus rs = e32ttl.sendFixedMessage(
@@ -94,10 +80,4 @@ void lora_loop(){
     sizeof(p)
   );
   Serial.print("LoRa: "); Serial.println(rs.getResponseDescription());
-
-  // lora_millis_saved = millis();
-  //}
-
-  // Döngüyü 1 saniyeye tamamla
-  // while (millis() - t0 < 1000) delay(5);
 }
