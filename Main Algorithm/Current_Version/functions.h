@@ -10,8 +10,17 @@
 #include <SoftwareSerial.h>
 #include <TinyGPS++.h>
 
-#define SURUKLENME_PARASUT_PIN 32
-#define ANA_PARASUT_PIN 33
+#define SURUKLENME_PARASUT_PIN 19
+#define ANA_PARASUT_PIN 38
+
+#define MPU_SDA    10   // MPU6050 SDA → IO4
+#define MPU_SCL    11   // MPU6050 SCL → IO5
+
+#define BMP_SDA   7   // BMP280 SDA → IO21
+#define BMP_SCL   6   // BMP280 SCL → IO22
+#define BMP_ADDR 0x76  // BMP280 adresi
+
+void switch_case();
 
 
 #pragma region lora
@@ -24,10 +33,10 @@ extern LoRa_E32        e32ttl;
 extern SoftwareSerial  gpsSW;
 extern TinyGPSPlus     gps;
 
-#define LORA_RX     16
-#define LORA_TX     17
-#define GPS_RX_PIN  27
-#define GPS_TX_PIN  26
+#define LORA_RX     39
+#define LORA_TX     40
+#define GPS_RX_PIN  41
+#define GPS_TX_PIN  42
 #define GPS_BAUD    9600
 
 #pragma pack(push,1)
@@ -51,6 +60,23 @@ struct Payload {
 #pragma pack(pop)
 #pragma endregion
 
+#pragma pack(push,1)
+struct Sut {
+  uint8_t id;
+  float   irtifa;
+  float   basinc;
+  float   ivmex;
+  float   ivmey;
+  float   ivmez;
+  float   acix;
+  float   aciy;
+  float   aciz;
+  uint8_t checksum;
+  uint8_t c1;
+  uint8_t c2;
+};
+#pragma pack(pop)
+
 void kalkis();
 void burnout();
 void apogee();
@@ -63,6 +89,27 @@ void write_to_sd();
 float avarage_in_given_time(unsigned long given_time /*as ms*/, float sensor_value);
 
 void lora_loop();
+
+void switch_case();
+void switch_flag();
+
+void fifoPush(uint8_t b);
+bool fifoPop(uint8_t &b);
+uint8_t fifoAvailable();
+void parseFifo();
+
+typedef union{
+    float           sayi;
+    unsigned char   array[4];
+}byte_donustur;
+
+extern unsigned char sit_paket[36];
+extern Adafruit_BMP280 bmp;
+
+extern HardwareSerial SitSut;
+
+void sit();
+void sut();
 
 #pragma region externs
 //flag
@@ -83,6 +130,11 @@ extern float rollDeg;
 //avarage_calc icin millis
 extern unsigned long millis_saved;
 extern unsigned long millis_counter;
+
+//sitsut
+extern float accel_x;
+extern float accel_y;
+extern float accel_z;
 
 #pragma endregion
 

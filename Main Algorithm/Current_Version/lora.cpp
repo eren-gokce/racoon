@@ -62,8 +62,8 @@ void lora_loop(){
   p.lora_roll  = roll;
   p.lora_yaw   = yaw;
   p.accelX  = 0;
-  p.accelY  = ivme;
-  p.accelZ  = 0;
+  p.accelY  = 0;
+  p.accelZ  = ivme;
   p.degree  = 0; // fonksiyonu yazilcak
   p.speed   = hiz;
   p.status  = 0;  // teknofestin isteigi flagler yazilcak;
