@@ -58,13 +58,9 @@ void lora_loop(){
   p.gpsAlt  = lastGpsAlt;
   p.lat     = gps.location.isValid() ? gps.location.lat() : NAN;
   p.lon     = gps.location.isValid() ? gps.location.lng() : NAN;
-  p.lora_pitch = pitch;
-  p.lora_roll  = roll;
-  p.lora_yaw   = yaw;
   p.accelX  = 0;
   p.accelY  = 0;
   p.accelZ  = ivme;
-  p.degree  = 0; // fonksiyonu yazilcak
   p.speed   = hiz;
   p.status  = 0;  // teknofestin isteigi flagler yazilcak;
   p.crc     = 0; //crc fonksiyonu atilcak
@@ -74,18 +70,14 @@ void lora_loop(){
 
   Serial.print("  BaroAlt: ");   Serial.println(p.baroAlt);
   Serial.print("  GPSAlt: ");    Serial.println(p.gpsAlt);
+
   Serial.print("  Lat: ");       Serial.println(p.lat,6);
   Serial.print("  Lon: ");       Serial.println(p.lon,6);
-
-  Serial.print("  Pitch: ");     Serial.println(p.lora_pitch);
-  Serial.print("  Roll: ");      Serial.println(p.lora_roll);
-  Serial.print("  Yaw: ");       Serial.println(p.lora_yaw);
 
   Serial.print("  Accel X : ");  Serial.print(p.accelX,3);
   Serial.print("  Accel Y : ");  Serial.print(p.accelY,3);
   Serial.print("  Accel Z : ");  Serial.println(p.accelZ,3);
 
-  Serial.print("  Degree : ");  Serial.println(p.degree);
   Serial.print("  Speed: ");       Serial.println(p.speed);
 
   Serial.print("  Status: ");    Serial.println(p.status);

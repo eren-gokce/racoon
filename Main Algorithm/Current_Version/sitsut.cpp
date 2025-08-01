@@ -38,6 +38,14 @@ uint8_t fifoAvailable() {  // fifo veri uzunlugu
 }
 #pragma endregion
 
+uint8_t calculateChecksum(const uint8_t* data, size_t length) {
+  uint16_t sum = 0;
+  for (size_t i = 0; i < length; i++) {
+    sum += data[i];
+  }
+  return (uint8_t)(0x100 - (sum & 0xFF));  // Toplam + checksum ≡ 0 mod 256
+}
+
 void parseFifo() {
   if (fifoAvailable() >= 36) {
     uint8_t startByte;
@@ -75,15 +83,6 @@ void parseFifo() {
     }
   }
 }
-
-uint8_t calculateChecksum(const uint8_t* data, size_t length) {
-  uint16_t sum = 0;
-  for (size_t i = 0; i < length; i++) {
-    sum += data[i];
-  }
-  return (uint8_t)(0x100 - (sum & 0xFF));  // Toplam + checksum ≡ 0 mod 256
-}
-
 
 uint8_t sit_paket[36];
 

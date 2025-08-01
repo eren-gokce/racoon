@@ -46,13 +46,9 @@ struct Payload {
   float   gpsAlt;
   float   lat;
   float   lon;
-  float   lora_pitch;
-  float   lora_roll;
-  float   lora_yaw;
   float   accelX;
   float   accelY;
   float   accelZ;
-  float   degree; // diklik acisi
   float   speed; // ek benim istedigim bilgi
   uint8_t status;
   uint8_t crc;
